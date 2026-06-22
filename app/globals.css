@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-charcoal: #0B1020;
+  --color-brand-graphite: #12182B;
+  --color-brand-emerald: #4D8B72;
+  --color-brand-forest: #2A4F41;
+  --color-brand-softwhite: #FFFFFF;
+  --color-brand-silver: #DCE7E1;
+
+  /* System font stack — no Google Fonts dependency, builds always succeed */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', 'Fira Mono', monospace;
+}
+
+@layer base {
+  ::selection {
+    background: rgba(77, 139, 114, 0.3);
+    color: #fff;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .font-display { font-family: var(--font-display); }
+  .font-mono { font-family: var(--font-mono); }
+}
