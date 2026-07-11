@@ -39,21 +39,21 @@ const roles = [
 ];
 
 export function Careers() {
-  const WA = "https://wa.me/923338944489?text=Hi%20MEI%2C%20I'd%20like%20to%20apply%20for%20a%20role.%20Here's%20my%20background:";
+  const WA = "https://wa.me/41779513495?text=Hi%20MEI%2C%20I'd%20like%20to%20apply%20for%20a%20role.%20Here's%20my%20background:";
   return (
     <section id="careers" className="py-32 relative bg-[#0A0D1A] z-10 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="flex flex-col lg:flex-row gap-20 mb-20">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-xl">
-            <div className="text-sm font-mono tracking-widest text-[#555] uppercase mb-4">Join MEI</div>
+            <div className="text-sm font-mono tracking-widest text-[#98A3B3] uppercase mb-4">Join MEI</div>
             <h2 className="text-4xl md:text-5xl font-display font-medium text-white mb-6 tracking-tight text-balance">
               Work that ships.<br/>Teams that care.
             </h2>
-            <p className="text-lg text-[#777] font-light leading-relaxed mb-4">
-              MEI is a global remote team building real software for real businesses since 2014. We ship fast, we care about quality, and we hire people who want ownership over their work.
+            <p className="text-lg text-[#B8C2CE] font-light leading-relaxed mb-4">
+              MEI is a global remote team building real software for real businesses since our digital journey began in 2014. We ship fast, we care about quality, and we hire people who want ownership over their work.
             </p>
-            <p className="text-base text-[#555] font-light leading-relaxed">
+            <p className="text-base text-[#98A3B3] font-light leading-relaxed">
               We're not a big agency. Everyone works on things that matter. You'll see your output in production quickly, work directly with clients, and have a real say in how we build.
             </p>
           </motion.div>
@@ -64,7 +64,7 @@ export function Careers() {
                 { label: "Remote-first", desc: "Work from anywhere, worldwide. Async-friendly culture." },
                 { label: "Ship fast", desc: "No bureaucracy. Your work goes live, fast." },
                 { label: "Small team", desc: "Ownership and visibility from day one." },
-                { label: "Growing fast", desc: "Est. 2014 — entering aggressive growth phase." },
+                { label: "Growing fast", desc: "Digital journey since 2014 — entering aggressive growth phase." },
               ].map((item, i) => (
                 <motion.div key={i} initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.1 + i * 0.08 }}
                   className="p-6 rounded-xl bg-[#12182B] border border-white/5 hover:border-brand-emerald/20 transition-colors duration-300">
@@ -72,7 +72,7 @@ export function Careers() {
                     <CheckCircle2 size={14} className="text-brand-emerald" />
                     <div className="text-white font-medium text-sm">{item.label}</div>
                   </div>
-                  <div className="text-xs text-[#555] leading-relaxed font-light">{item.desc}</div>
+                  <div className="text-xs text-[#98A3B3] leading-relaxed font-light">{item.desc}</div>
                 </motion.div>
               ))}
             </div>
@@ -89,7 +89,7 @@ export function Careers() {
                 <Upload size={20} className="text-brand-emerald" />
                 <h3 className="text-xl font-display font-medium text-white">Send Us Your CV</h3>
               </div>
-              <p className="text-[#777] font-light text-sm leading-relaxed max-w-xl">
+              <p className="text-[#B8C2CE] font-light text-sm leading-relaxed max-w-xl">
                 Don't see the right role? Send your CV directly — we review every application. Include what you do best, a link to your work, and what kind of role you're looking for.
               </p>
               <p className="text-brand-emerald font-mono text-sm mt-3">📧 info@buildwithmei.com</p>
@@ -108,7 +108,7 @@ export function Careers() {
         </motion.div>
 
         {/* Open roles */}
-        <h3 className="text-sm font-mono tracking-widest text-[#555] uppercase mb-6 pb-4 border-b border-white/5">Open Roles</h3>
+        <h3 className="text-sm font-mono tracking-widest text-[#98A3B3] uppercase mb-6 pb-4 border-b border-white/5">Open Roles</h3>
         <div className="space-y-4">
           {roles.map((role, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -118,18 +118,18 @@ export function Careers() {
               <div className="relative z-10 flex flex-col lg:flex-row lg:items-start gap-6">
                 <div className="flex-1">
                   <div className="flex flex-wrap items-center gap-3 mb-3">
-                    <div className="w-9 h-9 rounded-lg bg-[#0B1020] border border-white/[0.05] flex items-center justify-center text-[#555] group-hover:text-brand-emerald transition-colors duration-300">
+                    <div className="w-9 h-9 rounded-lg bg-[#0B1020] border border-white/[0.05] flex items-center justify-center text-[#98A3B3] group-hover:text-brand-emerald transition-colors duration-300">
                       <role.icon size={17} strokeWidth={1.5} />
                     </div>
                     <h3 className="text-lg font-medium text-white tracking-tight">{role.title}</h3>
-                    <span className="text-[9px] font-mono text-brand-emerald uppercase tracking-widest bg-brand-emerald/10 px-2 py-1 rounded border border-brand-emerald/20">{role.type}</span>
+                    <span className="text-[10px] font-mono text-brand-emerald uppercase tracking-widest bg-brand-emerald/10 px-2 py-1 rounded border border-brand-emerald/20">{role.type}</span>
                   </div>
-                  <div className="flex items-center gap-1.5 mb-4 text-xs text-[#555] font-mono">
+                  <div className="flex items-center gap-1.5 mb-4 text-xs text-[#98A3B3] font-mono">
                     <MapPin size={10} />{role.location}
                   </div>
-                  <p className="text-sm text-[#777] font-light leading-relaxed mb-4 max-w-2xl">{role.desc}</p>
+                  <p className="text-sm text-[#B8C2CE] font-light leading-relaxed mb-4 max-w-2xl">{role.desc}</p>
                   <div className="flex flex-wrap gap-2">
-                    {role.skills.map((s, j) => <span key={j} className="text-[10px] font-mono px-2.5 py-1 rounded bg-[#0B1020] border border-white/[0.04] text-[#666]">{s}</span>)}
+                    {role.skills.map((s, j) => <span key={j} className="text-[10px] font-mono px-2.5 py-1 rounded bg-[#0B1020] border border-white/[0.04] text-[#B8C2CE]">{s}</span>)}
                   </div>
                 </div>
                 <div className="shrink-0 flex flex-col gap-2">
@@ -137,7 +137,7 @@ export function Careers() {
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-brand-emerald text-white font-medium text-sm hover:bg-[#3d7260] transition-all duration-300 whitespace-nowrap">
                     Apply + Send CV <ArrowRight size={14} />
                   </a>
-                  <a href={`https://wa.me/923338944489?text=Hi%20MEI%2C%20I'd%20like%20to%20apply%20for%20the%20${encodeURIComponent(role.title)}%20role.%20Here's%20a%20bit%20about%20me%3A`}
+                  <a href={`https://wa.me/41779513495?text=Hi%20MEI%2C%20I'd%20like%20to%20apply%20for%20the%20${encodeURIComponent(role.title)}%20role.%20Here's%20a%20bit%20about%20me%3A`}
                     target="_blank" rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] font-medium text-sm hover:bg-[#25D366] hover:text-white transition-all duration-300 whitespace-nowrap">
                     WhatsApp

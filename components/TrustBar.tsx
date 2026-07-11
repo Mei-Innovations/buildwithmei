@@ -27,8 +27,8 @@ function AnimatedNumber({ target, suffix = '' }: { target: number; suffix?: stri
 }
 
 const stats = [
-  { icon: Award, value: "2014", label: "Established — 10+ Years", animated: false },
-  { icon: Globe, value: "Worldwide", label: "Clients Across the Globe", animated: false },
+  { icon: Award, value: "2014", label: "Digital Journey Began", animated: false },
+  { icon: Globe, value: "International", label: "Clients Across the Globe", animated: false },
   { icon: Clock, num: 40, suffix: "+ hrs/wk", label: "Avg Admin Time Saved", animated: true },
   { icon: Shield, value: "Zero", label: "Disruption During Deployment", animated: false },
   { icon: TrendingUp, num: 90, suffix: " days", label: "Typical ROI Timeline", animated: true },
@@ -52,7 +52,7 @@ export function TrustBar() {
                 <div className="font-display font-semibold text-white text-lg leading-none mb-1">
                   {s.animated && s.num ? <AnimatedNumber target={s.num} suffix={s.suffix} /> : s.value}
                 </div>
-                <div className="text-xs text-[#666] font-light">{s.label}</div>
+                <div className="text-xs text-[#B8C2CE] font-light">{s.label}</div>
               </div>
             </motion.div>
           ))}

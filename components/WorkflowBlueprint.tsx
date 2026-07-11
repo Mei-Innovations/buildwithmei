@@ -14,11 +14,11 @@ export function WorkflowBlueprint() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="text-center mb-20 max-w-3xl mx-auto">
-          <div className="text-sm font-mono tracking-widest text-[#555] uppercase mb-4">How It Works</div>
+          <div className="text-sm font-mono tracking-widest text-[#98A3B3] uppercase mb-4">How It Works</div>
           <h2 className="text-4xl font-display font-medium text-white mb-6 tracking-tight">
             From raw data to business outcomes — automatically.
           </h2>
-          <p className="text-lg text-[#777] font-light leading-relaxed">
+          <p className="text-lg text-[#B8C2CE] font-light leading-relaxed">
             We replace manual processes with reliable software systems. Every workflow follows the same pattern: capture, process, act — without your team in the middle of every step.
           </p>
         </motion.div>
@@ -35,7 +35,7 @@ export function WorkflowBlueprint() {
 
               {/* 01 DATA CAPTURE */}
               <div className="flex-1 flex flex-col justify-center relative">
-                <div className="text-[10px] text-[#555] font-mono tracking-widest mb-4">01 DATA CAPTURE</div>
+                <div className="text-[10px] text-[#98A3B3] font-mono tracking-widest mb-4">01 DATA CAPTURE</div>
                 <div className="space-y-3 relative z-10">
                   {[
                     { label: "Client Forms",     icon: Database },
@@ -81,7 +81,7 @@ export function WorkflowBlueprint() {
                   </svg>
                 </motion.div>
                 <h4 className="text-white font-medium mb-2 tracking-tight">Intelligent Processing</h4>
-                <p className="text-xs text-[#777] font-light leading-relaxed mb-6">
+                <p className="text-xs text-[#B8C2CE] font-light leading-relaxed mb-6">
                   Data is validated, structured, and securely logged. Custom business rules handle compliance and routing, while integrated AI models extract key information instantly.
                 </p>
                 <div className="grid grid-cols-2 gap-2 mt-auto">
@@ -107,7 +107,7 @@ export function WorkflowBlueprint() {
 
               {/* 03 BUSINESS OUTCOMES */}
               <div className="flex-1 flex flex-col justify-center relative">
-                <div className="text-[10px] text-[#555] font-mono tracking-widest mb-4">03 BUSINESS OUTCOMES</div>
+                <div className="text-[10px] text-[#98A3B3] font-mono tracking-widest mb-4">03 BUSINESS OUTCOMES</div>
                 <div className="space-y-3 relative z-10">
                   {[
                     { label: "Update CRM",        icon: ShieldCheck },
@@ -117,7 +117,7 @@ export function WorkflowBlueprint() {
                     <motion.div key={i} initial={{ opacity: 0, x: 12 }} whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.08 }}
                       className="flex items-center gap-3 p-3 bg-gradient-to-r from-[#1a2540] to-[#12182B] border border-white/[0.04] rounded-lg text-xs text-[#aaa] hover:border-brand-emerald/20 hover:text-white transition-colors">
-                      <item.icon size={14} className="text-[#666]" />
+                      <item.icon size={14} className="text-[#B8C2CE]" />
                       {item.label}
                     </motion.div>
                   ))}

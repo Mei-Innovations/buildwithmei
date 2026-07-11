@@ -6,7 +6,7 @@ import { Menu, X, ArrowRight, MessageCircle, Instagram, Facebook } from 'lucide-
 import Link from 'next/link';
 import { Logo } from '@/components/Logo';
 
-const WA_LINK = "https://wa.me/923338944489?text=Hi%20MEI%20Innovations%2C%20I'd%20like%20to%20discuss%20a%20project.";
+const WA_LINK = "https://wa.me/41779513495?text=Hi%20MEI%20Innovations%2C%20I'd%20like%20to%20discuss%20a%20project.";
 
 export function Navbar() {
   const { scrollY } = useScroll();
@@ -41,19 +41,20 @@ export function Navbar() {
           </Link>
 
           <div className="hidden md:flex items-center gap-6 text-sm font-medium text-brand-silver">
-            <Link href="/services" className="hover:text-white transition-colors duration-200">Services</Link>
-            <Link href="/how-it-works" className="hover:text-white transition-colors duration-200">How It Works</Link>
-            <Link href="/who-we-serve" className="hover:text-white transition-colors duration-200">Who We Serve</Link>
+            <Link href="/services" className="hover:text-white transition-colors duration-200">Solutions</Link>
+            <Link href="/who-we-serve" className="hover:text-white transition-colors duration-200">Industries</Link>
+            <Link href="/markets" className="hover:text-white transition-colors duration-200">Markets</Link>
+            <Link href="/work" className="hover:text-white transition-colors duration-200">Work</Link>
             <Link href="/about" className="hover:text-white transition-colors duration-200">About</Link>
-            <Link href="/careers" className="hover:text-white transition-colors duration-200">Careers</Link>
+            <Link href="/contact" className="hover:text-white transition-colors duration-200">Contact</Link>
             <a href={WA_LINK} target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-2 h-9 px-4 rounded-md bg-[#25D366]/15 border border-[#25D366]/30 text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all duration-300 font-medium ml-1">
               <MessageCircle size={14} /> WhatsApp
             </a>
-            <Link href="/contact"
+            <a href="https://calendly.com/mei-innovations/30min" target="_blank" rel="noopener noreferrer"
               className="h-9 px-4 rounded-md bg-brand-emerald text-white hover:bg-[#3d7260] transition-all duration-300 font-medium flex items-center gap-2">
-              Free Strategy Call
-            </Link>
+              Book Strategy Session
+            </a>
           </div>
 
           <button className="md:hidden relative z-50 text-white p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -70,11 +71,11 @@ export function Navbar() {
             className="fixed inset-0 z-40 bg-[#0B1020]/98 backdrop-blur-xl pt-28 px-6 md:hidden flex flex-col gap-4 overflow-y-auto"
           >
             {[
-              { label: "Services", href: "/services" },
-              { label: "How It Works", href: "/how-it-works" },
-              { label: "Who We Serve", href: "/who-we-serve" },
+              { label: "Solutions", href: "/services" },
+              { label: "Industries", href: "/who-we-serve" },
+              { label: "Markets", href: "/markets" },
+              { label: "Work", href: "/work" },
               { label: "About", href: "/about" },
-              { label: "Careers", href: "/careers" },
               { label: "Contact", href: "/contact" },
             ].map((item) => (
               <Link key={item.href} href={item.href} onClick={() => setMobileMenuOpen(false)}
@@ -86,10 +87,10 @@ export function Navbar() {
               className="mt-4 h-14 w-full rounded-md bg-[#25D366] text-white font-semibold flex items-center justify-center gap-2 text-base">
               <MessageCircle size={20} /> Chat on WhatsApp
             </a>
-            <Link href="/contact" onClick={() => setMobileMenuOpen(false)}
+            <a href="https://calendly.com/mei-innovations/30min" target="_blank" rel="noopener noreferrer"
               className="h-14 w-full rounded-md bg-brand-emerald text-white font-semibold flex items-center justify-center gap-2 text-base">
-              Book Free Strategy Call <ArrowRight size={18} />
-            </Link>
+              Book Strategy Session <ArrowRight size={18} />
+            </a>
           </motion.div>
         )}
       </AnimatePresence>

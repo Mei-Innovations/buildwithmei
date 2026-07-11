@@ -15,9 +15,9 @@ export function OperatingModel() {
     <section id="operating-model" className="py-32 relative bg-[#0B1020] z-10 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-20 max-w-3xl">
-          <div className="text-sm font-mono tracking-widest text-[#555] uppercase mb-4">Our Process</div>
+          <div className="text-sm font-mono tracking-widest text-[#98A3B3] uppercase mb-4">Our Process</div>
           <h2 className="text-4xl md:text-5xl font-display font-medium text-white mb-5 tracking-tight text-balance">How we work with you.</h2>
-          <p className="text-lg text-[#666] font-light leading-relaxed">We don't hand off code and disappear. We act as your operational technology partner — from the first conversation through to long-term system growth.</p>
+          <p className="text-lg text-[#B8C2CE] font-light leading-relaxed">We don't hand off code and disappear. We act as your operational technology partner — from the first conversation through to long-term system growth.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
@@ -32,12 +32,12 @@ export function OperatingModel() {
             >
               <div className="absolute top-6 right-6 font-mono text-[#1a2535] text-4xl font-bold select-none">{step.num}</div>
               <div className="flex items-start gap-5">
-                <div className="w-10 h-10 rounded-lg bg-[#0B1020] border border-white/8 flex items-center justify-center text-[#555] group-hover:text-brand-emerald transition-colors duration-300 shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-[#0B1020] border border-white/8 flex items-center justify-center text-[#98A3B3] group-hover:text-brand-emerald transition-colors duration-300 shrink-0">
                   <step.icon size={20} strokeWidth={1.5} />
                 </div>
                 <div>
                   <h3 className="text-lg font-medium text-white mb-2 tracking-tight">{step.title}</h3>
-                  <p className="text-sm text-[#666] font-light leading-relaxed">{step.desc}</p>
+                  <p className="text-sm text-[#B8C2CE] font-light leading-relaxed">{step.desc}</p>
                 </div>
               </div>
             </motion.div>
@@ -61,10 +61,10 @@ export function OperatingModel() {
             </svg>
           </div>
           <div className="relative z-10 max-w-3xl">
-            <div className="text-[10px] font-mono tracking-widest text-[#444] uppercase mb-6">A Note from the Founder</div>
-            <blockquote className="text-xl md:text-2xl text-white font-light leading-relaxed mb-8 tracking-tight">
-              "We started MEI in 2014 because we kept seeing the same thing: smart, capable teams buried under manual work that software should be handling. A decade later, that problem still costs businesses millions. We built MEI to solve it."
-            </blockquote>
+            <div className="text-[10px] font-mono tracking-widest text-[#8D98A8] uppercase mb-6">Our Approach</div>
+            <p className="text-xl md:text-2xl text-white font-light leading-relaxed mb-8 tracking-tight">
+              We believe technology works best when it solves real operational problems. MEI combines business understanding with modern digital systems to create solutions that teams actually use.
+            </p>
             <div className="flex items-center gap-4">
               <div className="w-11 h-11 rounded-full bg-[#0B1020] border border-brand-emerald/30 flex items-center justify-center">
                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6">
@@ -75,8 +75,8 @@ export function OperatingModel() {
                 </svg>
               </div>
               <div>
-                <div className="text-white font-medium text-sm">MEI Innovations — Est. 2014</div>
-                <div className="text-[11px] text-brand-emerald font-mono mt-0.5 tracking-wide">buildwithmei.com</div>
+                <div className="text-white font-medium text-sm">MEI Innovations</div>
+                <div className="text-[11px] text-brand-emerald font-mono mt-0.5 tracking-wide">Digital journey since 2014</div>
               </div>
             </div>
           </div>

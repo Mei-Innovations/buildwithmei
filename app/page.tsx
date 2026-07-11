@@ -1,14 +1,10 @@
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
-import { TrustBar } from '@/components/TrustBar';
-import { Services } from '@/components/Services';
-import { WorkflowBlueprint } from '@/components/WorkflowBlueprint';
-import { Infrastructure } from '@/components/Infrastructure';
+import { IntelligenceEngine } from '@/components/IntelligenceEngine';
+import { WhatMeiBuilds } from '@/components/WhatMeiBuilds';
 import { Industries } from '@/components/Industries';
-import { CaseStudies } from '@/components/CaseStudies';
-import { OperatingModel } from '@/components/OperatingModel';
-import { WhyMei } from '@/components/WhyMei';
-import { Careers } from '@/components/Careers';
+import { SelectedWork } from '@/components/SelectedWork';
+import { InsightsPreview } from '@/components/InsightsPreview';
 import { CTA, Footer } from '@/components/Footer';
 import { PageLoader } from '@/components/PageLoader';
 
@@ -18,15 +14,11 @@ export default function Home() {
       <PageLoader />
       <Navbar />
       <Hero />
-      <TrustBar />
-      <Services />
-      <WorkflowBlueprint />
-      <Infrastructure />
+      <IntelligenceEngine />
+      <WhatMeiBuilds />
       <Industries />
-      <CaseStudies />
-      <OperatingModel />
-      <WhyMei />
-      <Careers />
+      <SelectedWork />
+      <InsightsPreview />
       <CTA />
       <Footer />
     </main>

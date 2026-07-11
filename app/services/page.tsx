@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Navbar } from '@/components/Navbar';
 import { Services } from '@/components/Services';
+import { TechEcosystem } from '@/components/TechEcosystem';
+import { WorkflowBlueprint } from '@/components/WorkflowBlueprint';
 import { CTA, Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
@@ -20,16 +22,18 @@ export default function ServicesPage() {
       <Navbar />
       <div className="pt-32 pb-0">
         <div className="max-w-7xl mx-auto px-6 mb-16">
-          <div className="text-sm font-mono tracking-widest text-[#555] uppercase mb-4">Our Services</div>
+          <div className="text-sm font-mono tracking-widest text-[#98A3B3] uppercase mb-4">Our Services</div>
           <h1 className="text-5xl md:text-6xl font-display font-medium text-white tracking-tight text-balance mb-5">
             Everything you need.<br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#6DB898] via-[#4D8B72] to-[#2A4F41]">Nothing you don't.</span>
           </h1>
-          <p className="text-xl text-[#666] font-light max-w-2xl leading-relaxed">Whether you need a professional website or a fully automated business operating system — we start where you are and build what you actually need.</p>
+          <p className="text-xl text-[#B8C2CE] font-light max-w-2xl leading-relaxed">Whether you're modernizing operations, connecting business systems, or building digital experiences — MEI creates the intelligent infrastructure your business needs to grow.</p>
         </div>
       </div>
       <Services />
-      <CTA />
+      <WorkflowBlueprint />
+      <TechEcosystem />
+      <CTA heading={<>Build the systems<br/>your business needs next.</>} />
       <Footer />
     </main>
   );

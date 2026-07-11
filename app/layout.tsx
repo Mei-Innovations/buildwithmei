@@ -16,12 +16,12 @@ export const metadata: Metadata = {
     default: 'MEI Innovations | AI, Automation & Custom Software for Every Business',
     template: '%s | MEI Innovations',
   },
-  description: 'MEI Innovations builds custom automation, CRM, web, and software solutions for startups, SMEs, and growing businesses worldwide. From your first website to full operational infrastructure — established 2014.',
+  description: 'MEI Innovations builds custom automation, CRM, web, and software solutions for startups, SMEs, and growing international businesses. From your first website to full operational infrastructure — a digital journey since 2014.',
   keywords: [
-    'AI automation', 'custom software development', 'CRM solutions', 'business automation',
-    'web development agency', 'workflow automation', 'SaaS development', 'ecommerce development',
-    'digital transformation', 'small business software', 'startup technology', 'MEI Innovations',
-    'operational software', 'client portals', 'business systems'
+    'AI transformation', 'AI automation solutions', 'business automation', 'custom software development',
+    'digital transformation', 'AI workforce', 'workflow automation', 'CRM solutions',
+    'smart infrastructure', 'ecommerce development', 'web development agency', 'intelligent ecosystems',
+    'MEI Innovations', 'operational software', 'client portals', 'business systems'
   ],
   authors: [{ name: 'MEI Innovations', url: 'https://buildwithmei.com' }],
   creator: 'MEI Innovations',
@@ -37,23 +37,85 @@ export const metadata: Metadata = {
     url: 'https://buildwithmei.com',
     siteName: 'MEI Innovations',
     title: 'MEI Innovations | AI, Automation & Custom Software for Every Business',
-    description: 'From your first website to full operational automation — MEI builds technology that helps businesses at every stage grow faster. Est. 2014.',
+    description: 'From your first website to full operational automation — MEI builds technology that helps businesses at every stage grow faster. Digital journey since 2014.',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'MEI Innovations' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'MEI Innovations | AI, Automation & Custom Software',
-    description: 'Custom software, AI automation, CRM, and web development for businesses at every stage. Worldwide. Est. 2014.',
+    description: 'Custom software, AI automation, CRM, and web development for businesses at every stage. Worldwide. Digital journey since 2014.',
     images: ['/og-image.png'],
   },
   alternates: { canonical: 'https://buildwithmei.com' },
   icons: { icon: `data:image/svg+xml,${faviconSvg}` },
 };
 
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://buildwithmei.com/#organization',
+      name: 'MEI Innovations',
+      alternateName: 'Modern Ecosystem Intelligence',
+      url: 'https://buildwithmei.com',
+      slogan: 'Innovate • Integrate • Elevate',
+      description: "MEI Innovations builds intelligent ecosystems connecting businesses, customers, teams, data, AI, digital systems, and physical environments. MEI's digital journey started in 2014 through technology ventures and evolved into intelligent ecosystems.",
+      foundingDate: '2014',
+      email: 'info@buildwithmei.com',
+      logo: 'https://buildwithmei.com/og-image.png',
+      sameAs: [
+        'https://www.instagram.com/mei.innovations/',
+        'https://www.facebook.com/meiinnovations',
+      ],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'sales',
+        email: 'info@buildwithmei.com',
+        telephone: '+41779513495',
+        availableLanguage: ['English'],
+      },
+      makesOffer: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI & Business Automation', description: 'Practical AI automation built into existing business systems — document processing, workflow automation, and AI workforce solutions.' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Custom Software & Web Development', description: 'Custom software platforms, business applications, websites, and ecommerce built for how each operation works.' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'CRM & Business Systems', description: 'Unified CRM ecosystems, client portals, and operational dashboards that replace disconnected tools.' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Digital Transformation', description: 'Migration of legacy operations to modern, scalable, intelligent infrastructure — strategy, build, and transition.' } },
+      ],
+    },
+    {
+      '@type': 'ProfessionalService',
+      '@id': 'https://buildwithmei.com/#service',
+      name: 'MEI Innovations — Technology & AI Transformation Services',
+      url: 'https://buildwithmei.com',
+      parentOrganization: { '@id': 'https://buildwithmei.com/#organization' },
+      description: 'Custom software, AI automation, CRM ecosystems, ecommerce, and intelligent infrastructure for businesses at every stage — from first website to full AI workforce. Serving international clients since 2014.',
+      areaServed: ['United States', 'United Kingdom', 'Europe', 'United Arab Emirates', 'Canada', 'Saudi Arabia', 'Worldwide'],
+      knowsAbout: [
+        'AI transformation', 'business automation', 'custom software development', 'CRM ecosystems',
+        'ecommerce development', 'AI workforce', 'computer vision', 'smart infrastructure',
+        'hospitality technology', 'healthcare technology', 'real estate technology',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://buildwithmei.com/#website',
+      url: 'https://buildwithmei.com',
+      name: 'MEI Innovations',
+      publisher: { '@id': 'https://buildwithmei.com/#organization' },
+      inLanguage: 'en-US',
+    },
+  ],
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="dark">
       <body className="bg-[#0B1020] text-[#F8FAFC] antialiased" suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         {children}
       </body>
     </html>

@@ -1,0 +1,63 @@
+# MEI Innovations — Modern Ecosystem Intelligence
+
+> MEI Innovations builds intelligent ecosystems connecting businesses, customers, teams, data, AI, digital systems, and physical environments. Digital journey started 2014 through technology ventures (Greenleaf, MyDoc). Serving international clients, remotely. Tagline: Innovate • Integrate • Elevate. Website: https://buildwithmei.com
+
+## What MEI Does
+
+MEI is a technology and AI transformation company — not a generic web agency, and not an enterprise-only AI lab. Clients start at any stage:
+
+- LAUNCH — digital foundations: websites, branding systems, ecommerce, digital presence
+- AUTOMATE — operational growth: CRM systems, AI workflows, automation, customer journeys, internal systems
+- TRANSFORM — intelligent ecosystems: AI workforce (AI sales, reception, operations, and support agents), custom platforms, smart infrastructure, enterprise systems
+
+## MEI Intelligence Engine™
+
+MEI's methodology (not a SaaS product): one intelligent layer connecting customers, teams, data, AI, operations, digital systems, and physical environments. Signals flow in → AI processing interprets and routes → business action executes automatically.
+
+## Industry Intelligence Ecosystems
+
+One Intelligence Engine adapted into ten specialized ecosystems:
+
+1. Hospitality Intelligence — hotels, restaurants, tourism: AI concierge, guest journey automation, booking intelligence
+2. Healthcare Intelligence — dental, aesthetic clinics, private healthcare, wellness: AI reception, appointment automation, patient CRM
+3. Commerce Intelligence — retail, fashion, beauty, FMCG, ecommerce: commerce ecosystems, customer intelligence, growth automation
+4. Real Estate Intelligence — developers, construction, smart communities: smart buildings, digital twins, facility intelligence
+5. Industrial Intelligence — factories, warehouses, manufacturing: AI vision, safety monitoring, production analytics
+6. Agriculture Intelligence — farming, livestock, food systems: crop monitoring, sensor networks, farm dashboards
+7. Mobility Intelligence — automotive, fleet, transport, logistics: fleet intelligence, predictive maintenance, route optimization
+8. Education Intelligence — schools, universities, training: learning platforms, admission automation, student systems
+9. Professional Intelligence — mortgage, finance, consultants: CRM ecosystems, client workflows, document intelligence
+10. Energy & Sustainability Intelligence — energy optimization, smart utilities, environmental monitoring
+
+## Markets
+
+Focused expertise (remote, worldwide — no physical office claims): United States (AI adoption, healthcare tech, real estate tech, professional services), United Kingdom (private healthcare, dental, aesthetics), Europe (hospitality and tourism, grounded in Swiss hospitality experience), UAE (real estate intelligence, smart infrastructure, luxury ecosystems), Canada (professional services, mortgage ecosystems), Saudi Arabia (Vision 2030 smart transformation — emerging).
+
+## History
+
+MEI's journey began in 2014 through digital ventures: Greenleaf (online grocery / commerce ecosystem) and MyDoc (doctor appointment / healthcare platform). MEI evolved from digital ventures into intelligent ecosystems — it did not begin as an AI company.
+
+## Selected Work
+
+- QARM — Professional Intelligence: mortgage operations ecosystem (CRM workflows, client communication, operational automation)
+- H&A Nature's Best — Commerce Intelligence: digital commerce ecosystem (brand transformation, ecommerce foundation, customer experience)
+
+## Technology Ecosystem
+
+Technologies MEI builds with (no partnership claims): OpenAI, Claude, Gemini, AI agents, machine learning; AWS, Google Cloud, Azure, Netlify, Vercel; React, Next.js, Node.js, Python, APIs; Shopify, WordPress/WooCommerce, GoHighLevel, HubSpot, Salesforce; Zapier, Make, n8n, analytics, dashboards.
+
+## Contact
+
+- Strategy session (primary): https://calendly.com/mei-innovations/30min
+- WhatsApp: +41 77 951 34 95
+- Email: info@buildwithmei.com
+
+## Pages
+
+- https://buildwithmei.com/ — overview
+- https://buildwithmei.com/services/ — solutions (Launch / Automate / Transform) and technology ecosystem
+- https://buildwithmei.com/who-we-serve/ — industry intelligence ecosystems
+- https://buildwithmei.com/markets/ — global markets
+- https://buildwithmei.com/work/ — case studies and transformations
+- https://buildwithmei.com/about/ — history and approach
+- https://buildwithmei.com/contact/ — contact and strategy session booking

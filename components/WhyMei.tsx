@@ -15,7 +15,7 @@ const checks = [
 ];
 
 const stats = [
-  { val: "2014", sub: "Founded. A decade of delivering operational change.", green: false, delay: 0 },
+  { val: "2014", sub: "Digital journey began — a decade of building real systems.", green: false, delay: 0 },
   { val: "Hours", sub: "Recovered weekly by clients who replace manual work with MEI systems.", green: true, delay: 0.1 },
   { val: "Scales", sub: "System architectures designed to grow as your transaction volume grows.", green: false, delay: 0.2 },
   { val: "Stays", sub: "We remain your technical partner after launch — not a vendor who disappears.", green: false, alt: true, delay: 0.3 },
@@ -34,22 +34,22 @@ export function WhyMei() {
             <h2 className="text-4xl md:text-5xl font-display font-medium text-white mb-6 tracking-tight text-balance">
               A decade of solving<br/>the right problems.
             </h2>
-            <p className="text-lg text-[#666] font-light leading-relaxed mb-8">
-              We've been doing this since 2014. Not as a trendy AI startup — as an operational technology firm that has watched businesses transform when they stop fighting their own systems.
+            <p className="text-lg text-[#B8C2CE] font-light leading-relaxed mb-8">
+              MEI's digital journey started in 2014 through technology ventures. Not a trendy AI startup — an operational technology firm that evolved from building its own products into building intelligent ecosystems for others.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
               {checks.map((item, i) => (
                 <motion.div key={i} initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.05 * i }}
                   className="flex items-start gap-3">
                   <CheckCircle2 size={16} className="text-brand-emerald shrink-0 mt-0.5" />
-                  <span className="text-sm text-[#888] leading-snug">{item}</span>
+                  <span className="text-sm text-[#B0BAC7] leading-snug">{item}</span>
                 </motion.div>
               ))}
             </div>
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-brand-emerald text-white font-semibold hover:bg-[#3d7260] transition-all duration-300 text-sm shadow-[0_0_20px_rgba(77,139,114,0.2)]">
+              <a href="https://calendly.com/mei-innovations/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-brand-emerald text-white font-semibold hover:bg-[#3d7260] transition-all duration-300 text-sm shadow-[0_0_20px_rgba(77,139,114,0.2)]">
                 Talk to us about your operations <ArrowRight size={14} />
-              </Link>
+              </a>
             </motion.div>
           </motion.div>
 
@@ -62,7 +62,7 @@ export function WhyMei() {
                     whileHover={{ scale: 1.02, borderColor: s.green ? 'rgba(77,139,114,0.4)' : 'rgba(255,255,255,0.12)' }}
                     className={`p-8 rounded-xl border transition-all duration-300 cursor-default ${s.green ? "bg-brand-emerald/5 border-brand-emerald/15" : "bg-[#12182B] border-white/5"}`}>
                     <div className={`text-4xl font-display font-medium mb-2 tracking-tight ${s.green ? "text-brand-emerald" : "text-white"}`}>{s.val}</div>
-                    <div className="text-sm text-[#555] font-light leading-relaxed">{s.sub}</div>
+                    <div className="text-sm text-[#98A3B3] font-light leading-relaxed">{s.sub}</div>
                   </motion.div>
                 ))}
               </div>
@@ -72,7 +72,7 @@ export function WhyMei() {
                     whileHover={{ scale: 1.02, borderColor: 'rgba(255,255,255,0.12)' }}
                     className={`p-8 rounded-xl border border-white/5 transition-all duration-300 cursor-default ${s.alt ? "bg-[#161D2B]" : "bg-[#12182B]"}`}>
                     <div className="text-4xl font-display font-medium text-white mb-2 tracking-tight">{s.val}</div>
-                    <div className="text-sm text-[#555] font-light leading-relaxed">{s.sub}</div>
+                    <div className="text-sm text-[#98A3B3] font-light leading-relaxed">{s.sub}</div>
                   </motion.div>
                 ))}
               </div>
