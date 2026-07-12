@@ -11,6 +11,7 @@ const roles = [
     location: "Remote · Worldwide",
     desc: "Build custom web applications, automation systems, and client portals. You'll work across the full stack — Next.js, Node.js, databases, integrations — on projects that ship fast and matter.",
     skills: ["Next.js / React", "Node.js", "PostgreSQL / Supabase", "REST & Webhook integrations"],
+    accent: "#1FB5C9",
   },
   {
     title: "Automation & Systems Engineer",
@@ -19,6 +20,7 @@ const roles = [
     location: "Remote · Worldwide",
     desc: "Design and implement intelligent workflow automation for real clients. If you think in systems and love connecting tools that weren't designed to talk to each other, this is for you.",
     skills: ["Make / Zapier / custom automation", "API integration", "CRM configuration", "Process mapping"],
+    accent: "#4D8B72",
   },
   {
     title: "Client Solutions Manager",
@@ -27,6 +29,7 @@ const roles = [
     location: "Remote · Worldwide",
     desc: "Own client relationships post-build. Monitor system performance, identify opportunities, and ensure every client gets the outcome they were promised.",
     skills: ["Client communication", "Project management", "Tech fluency", "Problem solving"],
+    accent: "#E8745B",
   },
   {
     title: "Operations & Strategy Analyst",
@@ -35,6 +38,7 @@ const roles = [
     location: "Remote · Worldwide",
     desc: "Help clients map their workflows and identify where automation delivers the highest ROI. Business analysis meets technology.",
     skills: ["Business process analysis", "Documentation", "Written communication", "Interest in tech"],
+    accent: "#D4A574",
   },
 ];
 
@@ -54,7 +58,7 @@ export function Careers() {
               MEI is a global remote team building real software for real businesses since our digital journey began in 2014. We ship fast, we care about quality, and we hire people who want ownership over their work.
             </p>
             <p className="text-base text-[#98A3B3] font-light leading-relaxed">
-              We're not a big agency. Everyone works on things that matter. You'll see your output in production quickly, work directly with clients, and have a real say in how we build.
+              We&apos;re not a big agency. Everyone works on things that matter. You&apos;ll see your output in production quickly, work directly with clients, and have a real say in how we build.
             </p>
           </motion.div>
 
@@ -90,7 +94,7 @@ export function Careers() {
                 <h3 className="text-xl font-display font-medium text-white">Send Us Your CV</h3>
               </div>
               <p className="text-[#B8C2CE] font-light text-sm leading-relaxed max-w-xl">
-                Don't see the right role? Send your CV directly — we review every application. Include what you do best, a link to your work, and what kind of role you're looking for.
+                Don&apos;t see the right role? Send your CV directly — we review every application. Include what you do best, a link to your work, and what kind of role you&apos;re looking for.
               </p>
               <p className="text-brand-emerald font-mono text-sm mt-3">📧 info@buildwithmei.com</p>
             </div>
@@ -113,16 +117,17 @@ export function Careers() {
           {roles.map((role, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.09 }}
-              className="group relative rounded-xl border border-white/[0.04] bg-[#12182B] p-8 hover:border-brand-emerald/20 transition-all duration-400 overflow-hidden">
+              style={{ ['--accent' as string]: role.accent }}
+              className="group relative rounded-xl border border-white/[0.04] bg-[#12182B] p-8 hover:border-[var(--accent)]/30 transition-all duration-400 overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_right,rgba(77,139,114,0.03),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               <div className="relative z-10 flex flex-col lg:flex-row lg:items-start gap-6">
                 <div className="flex-1">
                   <div className="flex flex-wrap items-center gap-3 mb-3">
-                    <div className="w-9 h-9 rounded-lg bg-[#0B1020] border border-white/[0.05] flex items-center justify-center text-[#98A3B3] group-hover:text-brand-emerald transition-colors duration-300">
+                    <div className="w-9 h-9 rounded-lg bg-[#0B1020] border border-white/[0.05] flex items-center justify-center transition-colors duration-300" style={{ color: role.accent }}>
                       <role.icon size={17} strokeWidth={1.5} />
                     </div>
                     <h3 className="text-lg font-medium text-white tracking-tight">{role.title}</h3>
-                    <span className="text-[10px] font-mono text-brand-emerald uppercase tracking-widest bg-brand-emerald/10 px-2 py-1 rounded border border-brand-emerald/20">{role.type}</span>
+                    <span className="text-[10px] font-mono uppercase tracking-widest px-2 py-1 rounded border" style={{ color: role.accent, background: `${role.accent}1a`, borderColor: `${role.accent}33` }}>{role.type}</span>
                   </div>
                   <div className="flex items-center gap-1.5 mb-4 text-xs text-[#98A3B3] font-mono">
                     <MapPin size={10} />{role.location}

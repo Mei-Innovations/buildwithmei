@@ -18,10 +18,10 @@ export const metadata: Metadata = {
 
 function Journey() {
   const steps = [
-    { year: '2014', title: 'Digital Foundations Begin', desc: 'Started building digital products, platforms and operational systems.' },
-    { year: 'Greenleaf', title: 'Commerce Technology Experience', desc: 'Built ecommerce workflows connecting customers, inventory and operations.' },
-    { year: 'MyDoc', title: 'Healthcare Technology Experience', desc: 'Explored digital healthcare access, appointment systems and patient journeys.' },
-    { year: 'Today', title: 'Modern Ecosystem Intelligence', desc: 'Combining software, AI, automation and operational experience into connected business solutions.' },
+    { year: '2014', title: 'Digital Foundations Begin', desc: 'Started building digital products, platforms and operational systems.', accent: '#4D8B72' },
+    { year: 'Greenleaf', title: 'Commerce Technology Experience', desc: 'Built ecommerce workflows connecting customers, inventory and operations.', accent: '#E8745B' },
+    { year: 'MyDoc', title: 'Healthcare Technology Experience', desc: 'Explored digital healthcare access, appointment systems and patient journeys.', accent: '#1FB5C9' },
+    { year: 'Today', title: 'Modern Ecosystem Intelligence', desc: 'Combining software, AI, automation and operational experience into connected business solutions.', accent: '#D4A574' },
   ];
   return (
     <section className="py-24 relative bg-[#0A0D1A] z-10 border-t border-white/5">
@@ -37,8 +37,8 @@ function Journey() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {steps.map((st, i) => (
-            <div key={i} className="p-6 rounded-xl bg-[#12182B] border border-white/5">
-              <div className="text-xs font-mono text-brand-emerald tracking-widest mb-3 uppercase">{st.year}</div>
+            <div key={i} className="p-6 rounded-xl bg-[#12182B] border border-white/5" style={{ borderTop: `2px solid ${st.accent}45` }}>
+              <div className="text-xs font-mono tracking-widest mb-3 uppercase" style={{ color: st.accent }}>{st.year}</div>
               <div className="text-base font-medium text-white mb-2">{st.title}</div>
               <p className="text-sm text-[#B8C2CE] font-light leading-relaxed">{st.desc}</p>
             </div>
@@ -60,7 +60,15 @@ export default function AboutPage() {
             A decade of building digital<br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#6DB898] via-[#4D8B72] to-[#2A4F41]">solutions for real businesses.</span>
           </h1>
-          <p className="text-xl text-[#B8C2CE] font-light max-w-2xl leading-relaxed">MEI's digital journey started in 2014 through technology ventures — and evolved into helping international businesses replace manual work with intelligent, connected systems.</p>
+          <p className="text-xl text-[#B8C2CE] font-light max-w-2xl leading-relaxed mb-8">MEI&apos;s digital journey started in 2014 through technology ventures — and evolved into helping international businesses replace manual work with intelligent, connected systems.</p>
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 relative flex items-center justify-center shrink-0">
+              <div className="absolute inset-0 bg-brand-emerald/20 blur-xl rounded-full" />
+              <img src="/mei-about-badge.png" alt="" aria-hidden loading="eager"
+                className="w-full h-full relative z-10 object-contain" />
+            </div>
+            <div className="text-xs font-mono tracking-[0.2em] text-brand-emerald uppercase">Innovate · Integrate · Elevate</div>
+          </div>
         </div>
       </div>
       <Journey />

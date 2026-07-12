@@ -2,15 +2,14 @@ import type { Metadata } from 'next';
 import { Radio, Link2, Zap, TrendingUp } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { EcosystemDiagram } from '@/components/EcosystemDiagram';
-import { WorkflowBlueprint } from '@/components/WorkflowBlueprint';
 import { OperatingModel } from '@/components/OperatingModel';
 import { CTA, Footer } from '@/components/Footer';
 
 const stages = [
-  { icon: Radio, title: 'Discover', desc: 'We map your current operations — the tools, data, and manual work already in play.' },
-  { icon: Link2, title: 'Connect', desc: 'Disconnected systems — portals, CRM, ecommerce, reporting — are brought into one operational layer.' },
-  { icon: Zap, title: 'Automate', desc: 'Repetitive workflows are handed to automation and AI, freeing your team for judgment work.' },
-  { icon: TrendingUp, title: 'Improve', desc: 'The system is monitored, refined, and scaled as the business grows.' },
+  { icon: Radio, title: 'Discover', desc: 'We map your current operations — the tools, data, and manual work already in play.', accent: '#1FB5C9' },
+  { icon: Link2, title: 'Connect', desc: 'Disconnected systems — portals, CRM, ecommerce, reporting — are brought into one operational layer.', accent: '#4D8B72' },
+  { icon: Zap, title: 'Automate', desc: 'Repetitive workflows are handed to automation and AI, freeing your team for judgment work.', accent: '#D4A574' },
+  { icon: TrendingUp, title: 'Improve', desc: 'The system is monitored, refined, and scaled as the business grows.', accent: '#E8745B' },
 ];
 
 export const metadata: Metadata = {
@@ -19,7 +18,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://buildwithmei.com/how-it-works' },
   openGraph: {
     title: 'How MEI Works | Process & Methodology',
-    description: 'Operations audit, custom build, automation integration, launch and support. A proven process refined since 2014.',
+    description: 'Operations audit, custom build, automation integration, launch and support — shaped by a digital journey since 2014.',
     url: 'https://buildwithmei.com/how-it-works',
   },
 };
@@ -58,9 +57,11 @@ export default function HowItWorksPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {stages.map((s, i) => (
-              <div key={s.title} className="p-6 rounded-xl bg-[#12182B] border border-white/5">
-                <div className="w-9 h-9 rounded-lg bg-brand-emerald/10 border border-brand-emerald/20 flex items-center justify-center mb-4">
-                  <s.icon size={17} className="text-brand-emerald" strokeWidth={1.5} />
+              <div key={s.title} className="p-6 rounded-xl bg-[#12182B] border border-white/5"
+                style={{ borderTop: `2px solid ${s.accent}40` }}>
+                <div className="w-9 h-9 rounded-lg border flex items-center justify-center mb-4"
+                  style={{ background: `${s.accent}1A`, borderColor: `${s.accent}33` }}>
+                  <s.icon size={17} style={{ color: s.accent }} strokeWidth={1.5} />
                 </div>
                 <div className="text-xs font-mono text-[#98A3B3] uppercase tracking-widest mb-2">{String(i + 1).padStart(2, '0')} — {s.title}</div>
                 <p className="text-sm text-[#B0BAC7] font-light leading-relaxed">{s.desc}</p>
@@ -70,7 +71,6 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      <WorkflowBlueprint />
       <OperatingModel />
       <CTA />
       <Footer />

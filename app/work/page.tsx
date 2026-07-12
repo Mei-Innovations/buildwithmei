@@ -35,7 +35,7 @@ export default function WorkPage() {
       <TechEcosystem />
       <CaseStudies />
       <WorkVentures />
-      <CTA heading={<>See what's possible<br/>with intelligent execution.</>} />
+      <CTA heading={<>See what&apos;s possible<br/>with intelligent execution.</>} />
       <Footer />
     </main>
   );

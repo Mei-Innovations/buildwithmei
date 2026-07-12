@@ -25,7 +25,7 @@ export default function CareersPage() {
             Work that ships.<br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#6DB898] via-[#4D8B72] to-[#2A4F41]">Teams that care.</span>
           </h1>
-          <p className="text-xl text-[#B8C2CE] font-light max-w-2xl leading-relaxed">We're a global remote team building real software for real businesses. Apply below or send your CV directly to <a href="mailto:info@buildwithmei.com" className="text-brand-emerald hover:text-white transition-colors">info@buildwithmei.com</a>.</p>
+          <p className="text-xl text-[#B8C2CE] font-light max-w-2xl leading-relaxed">We&apos;re a global remote team building real software for real businesses. Apply below or send your CV directly to <a href="mailto:info@buildwithmei.com" className="text-brand-emerald hover:text-white transition-colors">info@buildwithmei.com</a>.</p>
         </div>
       </div>
       <Careers />

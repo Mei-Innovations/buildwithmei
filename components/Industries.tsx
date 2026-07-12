@@ -10,11 +10,11 @@ import Link from 'next/link';
  * (no standalone categories without a corresponding dedicated page).
  */
 const previewIndustries = [
-  { id: 'hospitality', icon: Hotel, title: 'Hospitality Intelligence', audience: 'Hotels · Restaurants · Tourism' },
-  { id: 'healthcare', icon: HeartPulse, title: 'Healthcare Intelligence', audience: 'Clinics · Wellness · Patient Experience' },
-  { id: 'commerce', icon: ShoppingBag, title: 'Retail & Commerce Intelligence', audience: 'Ecommerce · Customer Experience · Operations' },
-  { id: 'professional', icon: Briefcase, title: 'Professional Services Intelligence', audience: 'Mortgage · Finance · Consultants · Service Businesses' },
-  { id: 'industrial', icon: Factory, title: 'Industrial Intelligence', audience: 'Manufacturing · Operations · Process Systems' },
+  { id: 'hospitality', icon: Hotel, title: 'Hospitality Intelligence', audience: 'Hotels · Restaurants · Tourism', accent: '#E8745B' },
+  { id: 'healthcare', icon: HeartPulse, title: 'Healthcare Intelligence', audience: 'Clinics · Wellness · Patient Experience', accent: '#1FB5C9' },
+  { id: 'commerce', icon: ShoppingBag, title: 'Retail & Commerce Intelligence', audience: 'Ecommerce · Customer Experience · Operations', accent: '#D4A574' },
+  { id: 'professional', icon: Briefcase, title: 'Professional Services Intelligence', audience: 'Mortgage · Finance · Consultants · Service Businesses', accent: '#4D8B72' },
+  { id: 'industrial', icon: Factory, title: 'Industrial Intelligence', audience: 'Manufacturing · Operations · Process Systems', accent: '#1FB5C9' },
 ];
 
 export function Industries() {
@@ -37,11 +37,13 @@ export function Industries() {
               initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.45, delay: i * 0.06 }}>
               <Link href={`/who-we-serve#${ind.id}`}
-                className="group relative p-6 rounded-xl bg-[#12182B] border border-white/5 hover:border-brand-emerald/25 transition-all duration-400 flex flex-col gap-4 h-full min-h-[150px] justify-end">
-                <div className="w-10 h-10 shrink-0 rounded-lg bg-[#0B1020] border border-white/8 flex items-center justify-center text-[#98A3B3] group-hover:text-brand-emerald transition-colors duration-300">
+                style={{ borderTop: `2px solid ${ind.accent}45` }}
+                className="group relative p-6 rounded-xl bg-[#12182B] border border-white/5 hover:border-white/15 transition-all duration-400 flex flex-col gap-4 h-full min-h-[150px]">
+                <div className="w-10 h-10 shrink-0 rounded-lg bg-[#0B1020] border border-white/8 flex items-center justify-center transition-colors duration-300"
+                  style={{ color: ind.accent }}>
                   <ind.icon size={19} strokeWidth={1.5} />
                 </div>
-                <div className="min-w-0">
+                <div className="min-w-0 mt-auto">
                   <h3 className="text-base font-medium text-white tracking-tight mb-1 flex items-center gap-2">
                     {ind.title}
                     <ArrowRight size={13} className="text-brand-emerald opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 shrink-0" />

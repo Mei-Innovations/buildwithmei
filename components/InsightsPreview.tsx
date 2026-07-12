@@ -2,30 +2,28 @@
 
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
-import Link from 'next/link';
 
 /**
  * Insights preview — thought leadership, not a blog feed.
  * No author avatars, no date-stamped list styling.
+ * Cards are intentionally non-navigational (no /insights route exists yet) —
+ * hover effect is kept purely for visual interest, not as a click affordance.
  */
 const insights = [
   {
     tag: 'AI & Operations',
     title: 'How AI is changing everyday business operations',
-    read: '6 min read',
-    href: '/insights',
+    accent: '#1FB5C9',
   },
   {
     tag: 'Hospitality',
     title: 'Why modern hospitality needs intelligent systems',
-    read: '5 min read',
-    href: '/insights',
+    accent: '#E8745B',
   },
   {
     tag: 'Transformation',
     title: 'Systems before software: the future of business transformation',
-    read: '7 min read',
-    href: '/insights',
+    accent: '#4D8B72',
   },
 ];
 
@@ -48,15 +46,15 @@ export function InsightsPreview() {
           {insights.map((post, i) => (
             <motion.div key={post.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}>
-              <Link href={post.href}
-                className="group flex flex-col h-full p-8 rounded-xl bg-[#12182B] border border-white/5 hover:border-brand-emerald/25 transition-all duration-400">
-                <div className="text-xs font-mono tracking-widest text-brand-emerald uppercase mb-4">{post.tag}</div>
+              <div
+                style={{ ['--accent' as string]: post.accent }}
+                className="group flex flex-col h-full p-8 rounded-xl bg-[#12182B] border border-white/5 hover:border-[var(--accent)]/30 transition-all duration-400">
+                <div className="text-xs font-mono tracking-widest uppercase mb-4" style={{ color: post.accent }}>{post.tag}</div>
                 <h3 className="text-lg font-medium text-white tracking-tight leading-snug mb-6">{post.title}</h3>
-                <div className="mt-auto flex items-center justify-between">
-                  <span className="text-xs text-[#8A97A8]">{post.read}</span>
-                  <ArrowRight size={15} className="text-brand-emerald opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                <div className="mt-auto flex items-center justify-end">
+                  <ArrowRight size={15} style={{ color: post.accent }} className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </div>
-              </Link>
+              </div>
             </motion.div>
           ))}
         </div>

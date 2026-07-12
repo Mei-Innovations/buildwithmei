@@ -40,16 +40,18 @@ const transformations = [
     summary: "A mortgage operation running on email threads and manual document chasing, transformed into a connected operations platform where client files, communication, and processing move through one system.",
     highlights: ["CRM-driven client workflows", "Automated client communication", "Operational automation, end to end", "International service delivery"],
     framing: "Built to enable an operation that scales with demand — not headcount.",
+    accent: "#1FB5C9",
   },
   {
     name: "H&A Nature's Best",
     category: "Commerce Intelligence",
     position: "Established wellness brand transformed into a premium digital commerce experience",
-    img: 'https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1200&q=75',
-    imgAlt: 'Digital commerce and brand presentation',
+    img: 'https://images.unsplash.com/photo-1686061593213-98dad7c599b9?auto=format&fit=crop&w=1200&q=75',
+    imgAlt: "H&A Nature's Best order management dashboard",
     summary: "A premium natural-products brand elevated from a storefront into a full commerce ecosystem — brand experience, ecommerce foundation, and the operational systems behind every order.",
     highlights: ["Brand modernization", "Ecommerce foundation", "Customer experience systems"],
     framing: "Designed to support a lean team delivering a big-brand experience, consistently.",
+    accent: "#E8745B",
   },
 ];
 
@@ -120,7 +122,7 @@ export function CaseStudies() {
                 ))}
                 <motion.div whileHover={{ borderColor: 'rgba(77,139,114,0.3)' }}
                   className="mt-6 p-4 rounded-lg bg-brand-emerald/5 border border-brand-emerald/15 transition-colors duration-300">
-                  <p className="text-sm text-brand-emerald font-light italic">"{s.quote}"</p>
+                  <p className="text-sm text-brand-emerald font-light italic">&ldquo;{s.quote}&rdquo;</p>
                 </motion.div>
               </div>
             </motion.div>
@@ -134,26 +136,28 @@ export function CaseStudies() {
             {transformations.map((t, i) => (
               <motion.div key={t.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="group rounded-xl bg-[#12182B] border border-white/5 hover:border-brand-emerald/20 transition-all duration-400 overflow-hidden">
+                style={{ ['--accent' as string]: t.accent }}
+                className="group rounded-xl bg-[#12182B] border border-white/5 hover:border-[var(--accent)]/30 transition-all duration-400 overflow-hidden">
                 <div className="relative aspect-[16/9] overflow-hidden">
                   <img src={t.img} alt={t.imgAlt} loading="lazy"
                     className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-700"
                     onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#12182B] via-[#12182B]/30 to-transparent pointer-events-none" />
+                  <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: t.accent }} />
                 </div>
                 <div className="p-8">
-                <div className="text-[10px] font-mono tracking-widest text-brand-emerald uppercase mb-2">{t.category}</div>
+                <div className="text-[10px] font-mono tracking-widest uppercase mb-2" style={{ color: t.accent }}>{t.category}</div>
                 <h3 className="text-xl font-medium text-white tracking-tight mb-1">{t.name}</h3>
                 <div className="text-sm text-[#B8C2CE] font-light mb-5">{t.position}</div>
                 <p className="text-sm text-[#B8C2CE] font-light leading-relaxed mb-6">{t.summary}</p>
                 <ul className="space-y-2.5 mb-6">
                   {t.highlights.map(h => (
                     <li key={h} className="flex items-center gap-2.5 text-sm text-[#C0C9D3] font-light">
-                      <span className="w-1.5 h-1.5 rounded-full bg-brand-emerald/60 shrink-0" />{h}
+                      <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: t.accent, opacity: 0.7 }} />{h}
                     </li>
                   ))}
                 </ul>
-                <p className="text-xs text-brand-emerald/90 font-mono pt-4 border-t border-white/5">{t.framing}</p>
+                <p className="text-xs font-mono pt-4 border-t border-white/5" style={{ color: t.accent, opacity: 0.9 }}>{t.framing}</p>
                 </div>
               </motion.div>
             ))}

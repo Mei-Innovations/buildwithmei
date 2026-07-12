@@ -113,10 +113,12 @@ export function Footer() {
           {/* Nav cols */}
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-20">
             <div>
-              <h4 className="text-white font-medium mb-5 text-sm">Services</h4>
+              <h4 className="text-white font-medium mb-5 text-sm">
+                <Link href="/services" className="hover:text-brand-emerald transition-colors">Services</Link>
+              </h4>
               <ul className="space-y-3 text-sm text-[#B0BAC7] font-light">
                 {["AI & Automation","Web Development","CRM & Business Systems","Ecommerce Development","Client Portals","Digital Transformation"].map(s => (
-                  <li key={s}><Link href="/services" className="hover:text-white transition-colors">{s}</Link></li>
+                  <li key={s}>{s}</li>
                 ))}
               </ul>
             </div>

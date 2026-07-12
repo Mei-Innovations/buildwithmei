@@ -6,11 +6,11 @@ import { Search, PenTool, Hammer, Workflow, TrendingUp, ArrowRight, Globe, Brain
 
 /** MEI Transformation Method — Discover → Design → Build → Automate → Scale */
 const method = [
-  { icon: Search, title: 'Discover', desc: 'We understand your operations before choosing any technology.' },
-  { icon: PenTool, title: 'Design', desc: 'The ecosystem is architected around how your business actually works.' },
-  { icon: Hammer, title: 'Build', desc: 'Platforms, portals, and systems — custom-built, never templated.' },
-  { icon: Workflow, title: 'Automate', desc: 'Workflows, AI assistants, and integrations remove the manual layer.' },
-  { icon: TrendingUp, title: 'Scale', desc: 'The ecosystem evolves with you — we stay after launch.' },
+  { icon: Search, title: 'Discover', desc: 'We understand your operations before choosing any technology.', accent: '#1FB5C9' },
+  { icon: PenTool, title: 'Design', desc: 'The ecosystem is architected around how your business actually works.', accent: '#D4A574' },
+  { icon: Hammer, title: 'Build', desc: 'Platforms, portals, and systems — custom-built, never templated.', accent: '#4D8B72' },
+  { icon: Workflow, title: 'Automate', desc: 'Workflows, AI assistants, and integrations remove the manual layer.', accent: '#1FB5C9' },
+  { icon: TrendingUp, title: 'Scale', desc: 'The ecosystem evolves with you — we stay after launch.', accent: '#E8745B' },
 ];
 
 export function WorkMethod() {
@@ -23,7 +23,7 @@ export function WorkMethod() {
             Operations first.<br/>Technology second.
           </h2>
           <p className="text-lg text-[#B8C2CE] font-light leading-relaxed">
-            Every business starts differently. The method doesn't change: we understand the operation, then build the connected system that improves it.
+            Every business starts differently. The method doesn&apos;t change: we understand the operation, then build the connected system that improves it.
           </p>
         </motion.div>
 
@@ -32,16 +32,18 @@ export function WorkMethod() {
             <Fragment key={m.title}>
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ delay: i * 0.08 }}
+                style={{ borderTop: `2px solid ${m.accent}40` }}
                 className="p-6 rounded-xl bg-[#12182B] border border-white/5">
-                <div className="w-9 h-9 rounded-lg bg-brand-emerald/10 border border-brand-emerald/20 flex items-center justify-center mb-4">
-                  <m.icon size={16} className="text-brand-emerald" strokeWidth={1.5} />
+                <div className="w-9 h-9 rounded-lg border flex items-center justify-center mb-4"
+                  style={{ background: `${m.accent}1A`, borderColor: `${m.accent}33` }}>
+                  <m.icon size={16} style={{ color: m.accent }} strokeWidth={1.5} />
                 </div>
-                <div className="text-[10px] font-mono text-brand-emerald tracking-widest mb-1.5">0{i + 1}</div>
+                <div className="text-[10px] font-mono tracking-widest mb-1.5" style={{ color: m.accent }}>0{i + 1}</div>
                 <div className="text-sm font-medium text-white mb-1.5">{m.title}</div>
                 <p className="text-xs text-[#B8C2CE] font-light leading-relaxed">{m.desc}</p>
               </motion.div>
               {i < method.length - 1 && (
-                <div className="hidden md:flex items-center justify-center text-brand-emerald/40">
+                <div className="hidden md:flex items-center justify-center text-white/20">
                   <ArrowRight size={15} />
                 </div>
               )}
@@ -55,11 +57,11 @@ export function WorkMethod() {
 
 /** Ecosystem Capabilities Delivered */
 const capabilities = [
-  { icon: Globe, name: 'Digital Platforms', items: ['Websites', 'Ecommerce', 'Client portals', 'Applications'] },
-  { icon: Workflow, name: 'Automation Systems', items: ['CRM workflows', 'AI assistants', 'Customer journeys', 'Process automation'] },
-  { icon: BarChart3, name: 'Business Intelligence', items: ['Dashboards', 'Reporting', 'Data workflows'] },
-  { icon: Sparkles, name: 'Experience Systems', items: ['Customer experience', 'Booking systems', 'Communication flows'] },
-  { icon: Radio, name: 'Smart Systems', items: ['Computer vision concepts', 'IoT-ready environments', 'Connected operations'] },
+  { icon: Globe, name: 'Digital Platforms', items: ['Websites', 'Ecommerce', 'Client portals', 'Applications'], accent: '#E8745B' },
+  { icon: Workflow, name: 'Automation Systems', items: ['CRM workflows', 'AI assistants', 'Customer journeys', 'Process automation'], accent: '#1FB5C9' },
+  { icon: BarChart3, name: 'Business Intelligence', items: ['Dashboards', 'Reporting', 'Data workflows'], accent: '#D4A574' },
+  { icon: Sparkles, name: 'Experience Systems', items: ['Customer experience', 'Booking systems', 'Communication flows'], accent: '#4D8B72' },
+  { icon: Radio, name: 'Smart Systems', items: ['Computer vision concepts', 'IoT-ready environments', 'Connected operations'], accent: '#1FB5C9' },
 ];
 
 export function WorkCapabilities() {
@@ -76,8 +78,9 @@ export function WorkCapabilities() {
           {capabilities.map((cap, i) => (
             <motion.div key={cap.name} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.45, delay: (i % 5) * 0.07 }}
-              className="p-6 rounded-xl bg-[#12182B] border border-white/5 hover:border-brand-emerald/20 transition-all duration-400">
-              <div className="w-10 h-10 rounded-lg bg-[#0B1020] border border-white/8 flex items-center justify-center mb-5 text-brand-emerald">
+              style={{ ['--accent' as string]: cap.accent }}
+              className="p-6 rounded-xl bg-[#12182B] border border-white/5 hover:border-[var(--accent)]/30 transition-all duration-400">
+              <div className="w-10 h-10 rounded-lg bg-[#0B1020] border border-white/8 flex items-center justify-center mb-5" style={{ color: cap.accent }}>
                 <cap.icon size={19} strokeWidth={1.5} />
               </div>
               <h3 className="text-base font-medium text-white tracking-tight mb-4">{cap.name}</h3>
@@ -105,11 +108,12 @@ export function WorkVentures() {
             Historical digital ventures.
           </h2>
           <p className="text-base text-[#B8C2CE] font-light leading-relaxed">
-            Before building ecosystems for clients, MEI built and operated its own — these ventures represent MEI's digital journey, and the operator's perspective behind every project since.
+            Before building ecosystems for clients, MEI built and operated its own — these ventures represent MEI&apos;s digital journey, and the operator&apos;s perspective behind every project since.
           </p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            style={{ borderTop: '2px solid #E8745B45' }}
             className="rounded-xl bg-[#12182B]/60 border border-white/5 overflow-hidden">
             <div className="relative h-32 overflow-hidden">
               <img src="https://images.unsplash.com/photo-1740805134242-876087bb56eb?auto=format&fit=crop&w=900&q=70" alt="Retail commerce environment" loading="lazy"
@@ -118,13 +122,14 @@ export function WorkVentures() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#12182B] via-[#12182B]/15 to-transparent pointer-events-none" />
             </div>
             <div className="p-7 pt-5">
-            <div className="text-[10px] font-mono tracking-widest text-[#98A3B3] uppercase mb-2">Historical Venture · Commerce</div>
+            <div className="text-[10px] font-mono tracking-widest uppercase mb-2" style={{ color: '#E8745B' }}>Historical Venture · Commerce</div>
             <h3 className="text-lg font-medium text-white tracking-tight mb-2">Greenleaf</h3>
             <p className="text-sm text-[#B8C2CE] font-light leading-relaxed">Online grocery and commerce ecosystem — hands-on experience connecting storefronts, inventory, fulfillment, and daily operations.</p>
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            transition={{ delay: 0.08 }} className="rounded-xl bg-[#12182B]/60 border border-white/5 overflow-hidden">
+            transition={{ delay: 0.08 }} style={{ borderTop: '2px solid #1FB5C945' }}
+            className="rounded-xl bg-[#12182B]/60 border border-white/5 overflow-hidden">
             <div className="relative h-32 overflow-hidden">
               <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=900&q=70" alt="Modern healthcare clinic environment" loading="lazy"
                 className="w-full h-full object-cover opacity-95"
@@ -132,7 +137,7 @@ export function WorkVentures() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#12182B] via-[#12182B]/15 to-transparent pointer-events-none" />
             </div>
             <div className="p-7 pt-5">
-            <div className="text-[10px] font-mono tracking-widest text-[#98A3B3] uppercase mb-2">Historical Venture · Healthcare</div>
+            <div className="text-[10px] font-mono tracking-widest uppercase mb-2" style={{ color: '#1FB5C9' }}>Historical Venture · Healthcare</div>
             <h3 className="text-lg font-medium text-white tracking-tight mb-2">MyDoc</h3>
             <p className="text-sm text-[#B8C2CE] font-light leading-relaxed">Doctor appointment platform — early healthcare technology experience: patient journeys, scheduling systems, and clinic workflows.</p>
             </div>

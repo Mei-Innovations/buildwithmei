@@ -19,6 +19,7 @@ const work = [
     img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=75',
     imgAlt: 'Operations platform interface',
     href: '/work#case-studies',
+    accent: '#1FB5C9',
   },
   {
     name: "H&A Nature's Best",
@@ -26,9 +27,10 @@ const work = [
     position: 'Traditional brand transformed into premium digital commerce experience',
     desc: 'An established wellness brand transformed with a modern commerce foundation and premium digital experience.',
     focus: ['Brand Modernization', 'Ecommerce Foundation'],
-    img: 'https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=900&q=75',
-    imgAlt: "H&A Nature's Best commerce platform",
+    img: 'https://images.unsplash.com/photo-1686061593213-98dad7c599b9?auto=format&fit=crop&w=900&q=75',
+    imgAlt: "H&A Nature's Best order management dashboard",
     href: '/work#case-studies',
+    accent: '#E8745B',
   },
 ];
 
@@ -48,18 +50,21 @@ export function SelectedWork() {
           {work.map((w, i) => (
             <motion.div key={w.name} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.12 }}>
-              <Link href={w.href} className="group flex flex-col rounded-xl bg-[#12182B] border border-white/5 hover:border-brand-emerald/25 transition-all duration-400 overflow-hidden h-full">
+              <Link href={w.href} style={{ ['--accent' as string]: w.accent }}
+                className="group flex flex-col rounded-xl bg-[#12182B] border border-white/5 hover:border-[var(--accent)]/30 transition-all duration-400 overflow-hidden h-full">
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <span className="absolute top-4 left-4 z-10 text-[11px] font-semibold tracking-wide uppercase text-brand-emerald bg-[#0B1020]/70 px-3 py-1.5 rounded-md border border-brand-emerald/25">
+                  <span className="absolute top-4 left-4 z-10 text-[11px] font-semibold tracking-wide uppercase bg-[#0B1020]/70 px-3 py-1.5 rounded-md border"
+                    style={{ color: w.accent, borderColor: `${w.accent}40` }}>
                     {w.tag}
                   </span>
                   <img src={w.img} alt={w.imgAlt} loading="lazy"
                     className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-700"
                     onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#12182B] via-[#12182B]/25 to-transparent pointer-events-none" />
+                  <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: w.accent }} />
                 </div>
                 <div className="p-8 flex flex-col flex-1">
-                  <p className="text-sm text-brand-emerald font-medium mb-3">{w.position}</p>
+                  <p className="text-sm font-medium mb-3" style={{ color: w.accent }}>{w.position}</p>
                   <h3 className="text-xl font-medium text-white tracking-tight mb-3">{w.name}</h3>
                   <p className="text-sm text-[#B8C2CE] font-light leading-relaxed mb-6">{w.desc}</p>
                   <div className="mt-auto flex flex-wrap gap-2">

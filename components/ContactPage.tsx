@@ -13,7 +13,7 @@ export function ContactPage() {
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} className="mb-16">
           <div className="text-sm font-mono tracking-widest text-[#98A3B3] uppercase mb-4">Get In Touch</div>
           <h1 className="text-5xl md:text-6xl font-display font-medium text-white tracking-tight text-balance mb-5">
-            Let's build your<br/>
+            Let&apos;s build your<br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#6DB898] via-[#4D8B72] to-[#2A4F41]">intelligent ecosystem.</span>
           </h1>
           <p className="text-xl text-[#B8C2CE] font-light max-w-2xl leading-relaxed">
@@ -86,7 +86,7 @@ export function ContactPage() {
                 <Mail size={24} className="text-brand-emerald" />
               </div>
               <h3 className="text-xl font-display font-medium text-white mb-2">Send an Email</h3>
-              <p className="text-sm text-[#B8C2CE] font-light mb-5 leading-relaxed">Tell us about your project. We'll review it carefully and come back with thoughts, ideas, and an honest assessment of how we can help.</p>
+              <p className="text-sm text-[#B8C2CE] font-light mb-5 leading-relaxed">Tell us about your project. We&apos;ll review it carefully and come back with thoughts, ideas, and an honest assessment of how we can help.</p>
               <div className="flex items-center gap-2 text-brand-emerald font-medium text-sm font-mono">
                 {SITE.email} <ArrowRight size={14} />
               </div>

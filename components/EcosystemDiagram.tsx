@@ -10,6 +10,7 @@ import { Activity, Command, Layers, Database, Lock, ShieldAlert } from 'lucide-r
  */
 export function EcosystemDiagram() {
   return (
+    <>
     <div className="w-full max-w-[1000px] mx-auto relative hidden sm:block">
       <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-brand-emerald/30 to-transparent" />
 
@@ -43,13 +44,13 @@ export function EcosystemDiagram() {
             {/* LEFT COLUMN — fixed width so all boxes are identical size */}
             <div className="flex flex-col gap-4 z-10" style={{width:'190px', flexShrink:0}}>
               {[
-                {name:"Client Portals",    icon:Lock,      c:"fn1"},
-                {name:"Ecommerce Data",    icon:Activity,  c:"fn2"},
-                {name:"Business CRM",      icon:Database,  c:"fn3"},
+                {name:"Client Portals",    icon:Lock,      c:"fn1", accent:"#4D8B72"},
+                {name:"Ecommerce Data",    icon:Activity,  c:"fn2", accent:"#E8745B"},
+                {name:"Business CRM",      icon:Database,  c:"fn3", accent:"#D4A574"},
               ].map((n,i)=>(
-                <div key={i} className={`${n.c} flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-[#12182B] to-[#0B1020] border border-white/[0.05] rounded-lg hover:border-brand-emerald/25 transition-colors duration-500 group w-full`}>
+                <div key={i} style={{ ['--accent' as string]: n.accent }} className={`${n.c} flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-[#12182B] to-[#0B1020] border border-white/[0.05] rounded-lg hover:border-[var(--accent)]/30 transition-colors duration-500 group w-full`}>
                   <div className="w-8 h-8 rounded border border-white/[0.05] bg-[#0B1020] flex items-center justify-center shrink-0">
-                    <n.icon size={14} className="text-[#98A3B3] group-hover:text-brand-emerald transition-colors duration-300"/>
+                    <n.icon size={14} style={{ color: n.accent }}/>
                   </div>
                   <span className="text-[11px] text-[#B8C2CE] font-mono group-hover:text-white transition-colors duration-300">{n.name}</span>
                 </div>
@@ -86,13 +87,13 @@ export function EcosystemDiagram() {
             {/* RIGHT COLUMN — same fixed width */}
             <div className="flex flex-col gap-4 z-10" style={{width:'190px', flexShrink:0}}>
               {[
-                {name:"Financial Dashboards", icon:Command,    c:"fn3"},
-                {name:"Operational Reports",  icon:ShieldAlert, c:"fn1"},
-                {name:"Custom Applications",  icon:Layers,     c:"fn2"},
+                {name:"Financial Dashboards", icon:Command,    c:"fn3", accent:"#D4A574"},
+                {name:"Operational Reports",  icon:ShieldAlert, c:"fn1", accent:"#1FB5C9"},
+                {name:"Custom Applications",  icon:Layers,     c:"fn2", accent:"#4D8B72"},
               ].map((n,i)=>(
-                <div key={i} className={`${n.c} flex flex-row-reverse items-center gap-3 px-4 py-3 bg-gradient-to-l from-[#12182B] to-[#0B1020] border border-white/[0.05] rounded-lg hover:border-brand-emerald/25 transition-colors duration-500 group w-full`}>
+                <div key={i} style={{ ['--accent' as string]: n.accent }} className={`${n.c} flex flex-row-reverse items-center gap-3 px-4 py-3 bg-gradient-to-l from-[#12182B] to-[#0B1020] border border-white/[0.05] rounded-lg hover:border-[var(--accent)]/30 transition-colors duration-500 group w-full`}>
                   <div className="w-8 h-8 rounded border border-white/[0.05] bg-[#0B1020] flex items-center justify-center shrink-0">
-                    <n.icon size={14} className="text-[#98A3B3] group-hover:text-brand-emerald transition-colors duration-300"/>
+                    <n.icon size={14} style={{ color: n.accent }}/>
                   </div>
                   <span className="text-[11px] text-[#B8C2CE] font-mono group-hover:text-white transition-colors duration-300 text-right">{n.name}</span>
                 </div>
@@ -125,5 +126,54 @@ export function EcosystemDiagram() {
         </div>
       </div>
     </div>
+
+    {/* Mobile fallback — same three-stage concept (Inputs -> MEI Engine -> Outputs),
+        as a simple legible vertical stack instead of the fixed-pixel-width desktop layout,
+        which can't reflow at mobile widths. */}
+    <div className="sm:hidden w-full max-w-sm mx-auto">
+      <div className="rounded-xl border border-white/[0.05] bg-[#0B1020] overflow-hidden">
+        <div className="h-11 border-b border-white/[0.04] flex items-center px-4 bg-[#12182B]">
+          <span className="text-[10px] uppercase font-mono text-[#98A3B3] tracking-widest">MEI Operational Ecosystem</span>
+        </div>
+        <div className="p-5 flex flex-col items-center gap-3">
+          {[
+            { name: "Client Portals", icon: Lock, accent: "#4D8B72" },
+            { name: "Ecommerce Data", icon: Activity, accent: "#E8745B" },
+            { name: "Business CRM", icon: Database, accent: "#D4A574" },
+          ].map((n, i) => (
+            <div key={i} className="flex items-center gap-3 px-4 py-2.5 bg-[#12182B] border border-white/[0.05] rounded-lg w-full">
+              <n.icon size={14} style={{ color: n.accent }} />
+              <span className="text-[11px] text-[#B8C2CE] font-mono">{n.name}</span>
+            </div>
+          ))}
+
+          <div className="w-px h-6 bg-gradient-to-b from-brand-emerald/50 to-brand-emerald/10" />
+
+          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#12182B] to-[#0B1020] border border-white/[0.05] flex flex-col items-center justify-center">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 mb-1.5">
+              <path d="M50 22 L65 30.66 L50 39.32 L35 30.66 Z" fill="#34D399"/>
+              <path d="M50 4 L86 24.78 L71 33.44 L50 21.32 L29 33.44 L14 24.78 Z" fill="#34D399"/>
+              <path d="M11 29 L47 49.78 L47 91.34 L31 82.1 L31 61 L27 58.7 L27 79.8 L11 70.56 Z" fill="#10B981"/>
+              <path d="M89 29 L53 49.78 L53 91.34 L69 82.1 L69 61 L73 58.7 L73 79.8 L89 70.56 Z" fill="#064E3B"/>
+            </svg>
+            <span className="text-[7px] font-mono tracking-widest text-[#B8C2CE]">MEI ENGINE</span>
+          </div>
+
+          <div className="w-px h-6 bg-gradient-to-b from-brand-emerald/10 to-brand-emerald/50" />
+
+          {[
+            { name: "Financial Dashboards", icon: Command, accent: "#D4A574" },
+            { name: "Operational Reports", icon: ShieldAlert, accent: "#1FB5C9" },
+            { name: "Custom Applications", icon: Layers, accent: "#4D8B72" },
+          ].map((n, i) => (
+            <div key={i} className="flex items-center gap-3 px-4 py-2.5 bg-[#12182B] border border-white/[0.05] rounded-lg w-full">
+              <n.icon size={14} style={{ color: n.accent }} />
+              <span className="text-[11px] text-[#B8C2CE] font-mono">{n.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+    </>
   );
 }

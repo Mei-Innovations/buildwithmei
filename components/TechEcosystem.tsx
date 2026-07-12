@@ -9,14 +9,14 @@ import { BrainCircuit, Cloud, Code2, Store, Workflow, Briefcase, BarChart3, Plug
  */
 
 const categories = [
-  { icon: BrainCircuit, name: 'AI & Intelligence', items: ['OpenAI', 'Claude', 'Gemini', 'AI Agents'] },
-  { icon: Code2, name: 'Software', items: ['React', 'Next.js', 'Node.js', 'Python'] },
-  { icon: Store, name: 'Commerce', items: ['Shopify', 'WooCommerce'] },
-  { icon: Briefcase, name: 'Business Systems', items: ['CRM', 'GoHighLevel', 'HubSpot', 'Salesforce'] },
-  { icon: Workflow, name: 'Automation', items: ['Zapier', 'Make', 'n8n'] },
-  { icon: Cloud, name: 'Cloud', items: ['AWS', 'Google Cloud', 'Azure', 'Netlify'] },
-  { icon: BarChart3, name: 'Data & Intelligence', items: ['Analytics', 'Dashboards', 'Reporting', 'Insights'] },
-  { icon: Plug, name: 'Integration', items: ['APIs', 'Connected platforms', 'Workflow connections'] },
+  { icon: BrainCircuit, name: 'AI & Intelligence', items: ['OpenAI', 'Claude', 'Gemini', 'AI Agents'], accent: '#1FB5C9' },
+  { icon: Code2, name: 'Software', items: ['React', 'Next.js', 'Node.js', 'Python'], accent: '#4D8B72' },
+  { icon: Store, name: 'Commerce', items: ['Shopify', 'WooCommerce'], accent: '#E8745B' },
+  { icon: Briefcase, name: 'Business Systems', items: ['CRM', 'GoHighLevel', 'HubSpot', 'Salesforce'], accent: '#D4A574' },
+  { icon: Workflow, name: 'Automation', items: ['Zapier', 'Make', 'n8n'], accent: '#1FB5C9' },
+  { icon: Cloud, name: 'Cloud', items: ['AWS', 'Google Cloud', 'Azure', 'Netlify'], accent: '#4D8B72' },
+  { icon: BarChart3, name: 'Data & Intelligence', items: ['Analytics', 'Dashboards', 'Reporting', 'Insights'], accent: '#D4A574' },
+  { icon: Plug, name: 'Integration', items: ['APIs', 'Connected platforms', 'Workflow connections'], accent: '#E8745B' },
 ];
 
 /** Full ecosystem — /services page. */
@@ -38,8 +38,9 @@ export function TechEcosystem() {
           {categories.map((cat, i) => (
             <motion.div key={cat.name} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.45, delay: (i % 4) * 0.06 }}
-              className="p-7 rounded-xl bg-[#12182B] border border-white/5 hover:border-brand-emerald/20 transition-all duration-400">
-              <div className="w-10 h-10 rounded-lg bg-[#0B1020] border border-white/8 flex items-center justify-center mb-5 text-brand-emerald">
+              style={{ ['--accent' as string]: cat.accent }}
+              className="p-7 rounded-xl bg-[#12182B] border border-white/5 hover:border-[var(--accent)]/30 transition-all duration-400">
+              <div className="w-10 h-10 rounded-lg bg-[#0B1020] border border-white/8 flex items-center justify-center mb-5" style={{ color: cat.accent }}>
                 <cat.icon size={19} strokeWidth={1.5} />
               </div>
               <h3 className="text-base font-medium text-white tracking-tight mb-4">{cat.name}</h3>

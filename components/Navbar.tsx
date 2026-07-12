@@ -2,11 +2,9 @@
 
 import { useState } from 'react';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'motion/react';
-import { Menu, X, ArrowRight, MessageCircle, Instagram, Facebook } from 'lucide-react';
+import { Menu, X, ArrowRight, Instagram, Facebook } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/Logo';
-
-const WA_LINK = "https://wa.me/41779513495?text=Hi%20MEI%20Innovations%2C%20I'd%20like%20to%20discuss%20a%20project.";
 
 export function Navbar() {
   const { scrollY } = useScroll();
@@ -45,14 +43,11 @@ export function Navbar() {
             <Link href="/who-we-serve" className="hover:text-white transition-colors duration-200">Industries</Link>
             <Link href="/markets" className="hover:text-white transition-colors duration-200">Markets</Link>
             <Link href="/work" className="hover:text-white transition-colors duration-200">Work</Link>
+            <Link href="/how-it-works" className="hover:text-white transition-colors duration-200">How It Works</Link>
             <Link href="/about" className="hover:text-white transition-colors duration-200">About</Link>
             <Link href="/contact" className="hover:text-white transition-colors duration-200">Contact</Link>
-            <a href={WA_LINK} target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-2 h-9 px-4 rounded-md bg-[#25D366]/15 border border-[#25D366]/30 text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all duration-300 font-medium ml-1">
-              <MessageCircle size={14} /> WhatsApp
-            </a>
             <a href="https://calendly.com/mei-innovations/30min" target="_blank" rel="noopener noreferrer"
-              className="h-9 px-4 rounded-md bg-brand-emerald text-white hover:bg-[#3d7260] transition-all duration-300 font-medium flex items-center gap-2">
+              className="h-9 px-4 rounded-md bg-brand-emerald text-white hover:bg-[#3d7260] transition-all duration-300 font-medium flex items-center gap-2 ml-1">
               Book Strategy Session
             </a>
           </div>
@@ -75,6 +70,7 @@ export function Navbar() {
               { label: "Industries", href: "/who-we-serve" },
               { label: "Markets", href: "/markets" },
               { label: "Work", href: "/work" },
+              { label: "How It Works", href: "/how-it-works" },
               { label: "About", href: "/about" },
               { label: "Contact", href: "/contact" },
             ].map((item) => (
@@ -83,12 +79,8 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <a href={WA_LINK} target="_blank" rel="noopener noreferrer"
-              className="mt-4 h-14 w-full rounded-md bg-[#25D366] text-white font-semibold flex items-center justify-center gap-2 text-base">
-              <MessageCircle size={20} /> Chat on WhatsApp
-            </a>
             <a href="https://calendly.com/mei-innovations/30min" target="_blank" rel="noopener noreferrer"
-              className="h-14 w-full rounded-md bg-brand-emerald text-white font-semibold flex items-center justify-center gap-2 text-base">
+              className="mt-4 h-14 w-full rounded-md bg-brand-emerald text-white font-semibold flex items-center justify-center gap-2 text-base">
               Book Strategy Session <ArrowRight size={18} />
             </a>
           </motion.div>

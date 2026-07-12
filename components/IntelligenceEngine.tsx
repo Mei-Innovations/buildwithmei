@@ -66,9 +66,9 @@ export function IntelligenceEngine() {
           </p>
         </motion.div>
 
-        {/* Ecosystem diagram */}
+        {/* Ecosystem diagram — full version, tablet and up (SVG text becomes illegible below ~640px) */}
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          transition={{ delay: 0.15 }} className="max-w-4xl mx-auto mb-16">
+          transition={{ delay: 0.15 }} className="max-w-4xl mx-auto mb-16 hidden sm:block">
           <svg viewBox="0 0 860 520" xmlns="http://www.w3.org/2000/svg" role="img" className="w-full h-auto"
             aria-label="Diagram of the MEI Intelligence Engine connecting customers, teams, data, operations, physical environments, and business systems">
             <defs>
@@ -76,6 +76,21 @@ export function IntelligenceEngine() {
                 <stop offset="0%" stopColor="rgba(109,184,152,0.28)" />
                 <stop offset="100%" stopColor="rgba(109,184,152,0)" />
               </radialGradient>
+              <linearGradient id="engineCubeTop" x1="430" y1="204" x2="430" y2="240" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#6DB898" />
+                <stop offset="1" stopColor="#3d8a68" />
+              </linearGradient>
+              <linearGradient id="engineCubeLeft" x1="384" y1="219" x2="426" y2="292" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#4D8B72" />
+                <stop offset="1" stopColor="#2d5540" />
+              </linearGradient>
+              <linearGradient id="engineCubeRight" x1="432" y1="219" x2="474" y2="292" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#3d8a68" />
+                <stop offset="1" stopColor="#1f3b2c" />
+              </linearGradient>
+              <filter id="engineCubeGlow" x="-40%" y="-40%" width="180%" height="180%">
+                <feDropShadow dx="0" dy="4" stdDeviation="8" floodColor="#047857" floodOpacity="0.5" />
+              </filter>
             </defs>
 
             {paths.map((d, i) => (
@@ -88,7 +103,7 @@ export function IntelligenceEngine() {
               </circle>
             ))}
 
-            {/* Core */}
+            {/* Core — energy field rings around the cube */}
             <circle cx="430" cy="260" r="98" fill="none" stroke="rgba(109,184,152,0.2)" strokeWidth="1">
               <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" />
             </circle>
@@ -96,11 +111,20 @@ export function IntelligenceEngine() {
               <animateTransform attributeName="transform" type="rotate" from="0 430 260" to="360 430 260" dur="26s" repeatCount="indefinite" />
             </circle>
             <circle cx="430" cy="260" r="86" fill="none" stroke="rgba(220,231,225,0.07)" strokeWidth="1" />
-            <circle cx="430" cy="260" r="62" fill="#12182B" stroke="rgba(109,184,152,0.55)" strokeWidth="1.4" />
             <circle cx="430" cy="260" r="62" fill="url(#engineCore)" />
-            <text x="430" y="250" textAnchor="middle" fill="#DCE7E1" fontSize="14" fontWeight="700" fontFamily="inherit">MEI</text>
-            <text x="430" y="268" textAnchor="middle" fill="#DCE7E1" fontSize="11" fontFamily="inherit">Intelligence</text>
-            <text x="430" y="283" textAnchor="middle" fill="#DCE7E1" fontSize="11" fontFamily="inherit">Engine™</text>
+
+            {/* The actual MEI cube mark, at the center of the Engine */}
+            <g filter="url(#engineCubeGlow)" transform="translate(430,260) scale(1.05)">
+              <animateTransform attributeName="transform" type="scale" values="1.05;1.1;1.05" additive="sum"
+                dur="3.4s" repeatCount="indefinite" />
+              <g transform="translate(-50,-48)">
+                <path d="M50 22 L65 30.66 L50 39.32 L35 30.66 Z" fill="url(#engineCubeTop)" />
+                <path d="M50 4 L86 24.78 L71 33.44 L50 21.32 L29 33.44 L14 24.78 Z" fill="url(#engineCubeTop)" />
+                <path d="M11 29 L47 49.78 L47 91.34 L31 82.1 L31 61 L27 58.7 L27 79.8 L11 70.56 Z" fill="url(#engineCubeLeft)" />
+                <path d="M89 29 L53 49.78 L53 91.34 L69 82.1 L69 61 L73 58.7 L73 79.8 L89 70.56 Z" fill="url(#engineCubeRight)" />
+              </g>
+            </g>
+            <text x="430" y="342" textAnchor="middle" fill="#DCE7E1" fontSize="11" fontWeight="600" fontFamily="inherit" letterSpacing="0.02em">MEI Intelligence Engine™</text>
 
             {/* Nodes */}
             {nodes.map((n, i) => (
@@ -111,6 +135,35 @@ export function IntelligenceEngine() {
               </g>
             ))}
           </svg>
+        </motion.div>
+
+        {/* Mobile fallback — same cube, but sized and labeled with real HTML text
+            instead of a scaled-down SVG (node/caption text becomes illegible below ~640px) */}
+        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          transition={{ delay: 0.15 }} className="sm:hidden mb-14 flex flex-col items-center">
+          <div className="relative w-40 h-40 mb-5">
+            <div className="absolute inset-0 rounded-full" style={{ background: 'radial-gradient(circle, rgba(109,184,152,0.28) 0%, transparent 70%)' }} />
+            <motion.div
+              animate={{ scale: [1, 1.06, 1] }}
+              transition={{ duration: 3.4, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 h-24 drop-shadow-[0_4px_16px_rgba(4,120,87,0.5)]">
+                <path d="M50 22 L65 30.66 L50 39.32 L35 30.66 Z" fill="#6DB898" />
+                <path d="M50 4 L86 24.78 L71 33.44 L50 21.32 L29 33.44 L14 24.78 Z" fill="#6DB898" />
+                <path d="M11 29 L47 49.78 L47 91.34 L31 82.1 L31 61 L27 58.7 L27 79.8 L11 70.56 Z" fill="#4D8B72" />
+                <path d="M89 29 L53 49.78 L53 91.34 L69 82.1 L69 61 L73 58.7 L73 79.8 L89 70.56 Z" fill="#2A4F41" />
+              </svg>
+            </motion.div>
+          </div>
+          <div className="text-sm font-medium text-[#DCE7E1] tracking-tight mb-6">MEI Intelligence Engine™</div>
+          <div className="flex flex-wrap justify-center gap-2 max-w-sm">
+            {nodes.map((n, i) => (
+              <span key={i} className="text-[11px] text-[#B8C2CE] font-mono px-3 py-1.5 rounded-full bg-[#12182B] border border-white/[0.08]">
+                {n.label}
+              </span>
+            ))}
+          </div>
         </motion.div>
 
         {/* Signals → AI Processing → Business Action */}

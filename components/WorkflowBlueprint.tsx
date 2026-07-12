@@ -44,8 +44,8 @@ export function WorkflowBlueprint() {
                   ].map((item, i) => (
                     <motion.div key={i} initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }} transition={{ delay: 0.1 + i * 0.08 }}
-                      className="flex items-center gap-3 p-3 bg-gradient-to-r from-[#1a2540] to-[#12182B] border border-white/[0.04] rounded-lg text-xs text-[#aaa] hover:border-brand-emerald/20 hover:text-white transition-colors">
-                      <item.icon size={14} className="text-brand-emerald/70" />
+                      className="flex items-center gap-3 p-3 bg-gradient-to-r from-[#1a2540] to-[#12182B] border border-white/[0.04] rounded-lg text-xs text-[#aaa] hover:border-[#1FB5C9]/30 hover:text-white transition-colors">
+                      <item.icon size={14} className="text-[#1FB5C9]/80" />
                       {item.label}
                     </motion.div>
                   ))}
@@ -89,7 +89,7 @@ export function WorkflowBlueprint() {
                     <span className="w-1.5 h-1.5 rounded-full bg-brand-emerald animate-pulse" /> Rule Engine
                   </div>
                   <div className="p-2 border border-white/[0.04] bg-[#0B1020] rounded flex items-center gap-2 text-[10px] text-[#aaa]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" /> AI Router
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#1FB5C9] animate-pulse" /> AI Router
                   </div>
                 </div>
               </div>
@@ -98,7 +98,7 @@ export function WorkflowBlueprint() {
               <div className="hidden md:flex flex-col justify-center w-16">
                 <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent relative">
                   <motion.div
-                    className="absolute top-1/2 -ml-1 w-2 h-2 rounded-full bg-blue-500 transform -translate-y-1/2 shadow-[0_0_8px_rgba(59,130,246,0.8)]"
+                    className="absolute top-1/2 -ml-1 w-2 h-2 rounded-full bg-[#1FB5C9] transform -translate-y-1/2 shadow-[0_0_8px_rgba(31,181,201,0.8)]"
                     animate={{ left: ["0%", "100%"] }}
                     transition={{ duration: 1.5, repeat: Infinity, ease: "linear", delay: 0.75 }}
                   />
@@ -116,8 +116,8 @@ export function WorkflowBlueprint() {
                   ].map((item, i) => (
                     <motion.div key={i} initial={{ opacity: 0, x: 12 }} whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.08 }}
-                      className="flex items-center gap-3 p-3 bg-gradient-to-r from-[#1a2540] to-[#12182B] border border-white/[0.04] rounded-lg text-xs text-[#aaa] hover:border-brand-emerald/20 hover:text-white transition-colors">
-                      <item.icon size={14} className="text-[#B8C2CE]" />
+                      className="flex items-center gap-3 p-3 bg-gradient-to-r from-[#1a2540] to-[#12182B] border border-white/[0.04] rounded-lg text-xs text-[#aaa] hover:border-[#D4A574]/30 hover:text-white transition-colors">
+                      <item.icon size={14} className="text-[#D4A574]/90" />
                       {item.label}
                     </motion.div>
                   ))}

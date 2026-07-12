@@ -25,7 +25,7 @@ export default function MarketsPage() {
             Different markets.<br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#6DB898] via-[#4D8B72] to-[#2A4F41]">One Intelligence Engine.</span>
           </h1>
-          <p className="text-xl text-[#B8C2CE] font-light max-w-2xl leading-relaxed">Markets represent MEI's expertise, focus, and opportunities — we work remotely with international clients, shaped by deep experience in each region's industries.</p>
+          <p className="text-xl text-[#B8C2CE] font-light max-w-2xl leading-relaxed">Markets represent MEI&apos;s expertise, focus, and opportunities — we work remotely with international clients, shaped by deep experience in each region&apos;s industries.</p>
         </div>
       </div>
       <Markets />

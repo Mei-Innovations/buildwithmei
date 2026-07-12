@@ -15,10 +15,10 @@ const checks = [
 ];
 
 const stats = [
-  { val: "2014", sub: "Digital journey began — a decade of building real systems.", green: false, delay: 0 },
-  { val: "Hours", sub: "Recovered weekly by clients who replace manual work with MEI systems.", green: true, delay: 0.1 },
-  { val: "Scales", sub: "System architectures designed to grow as your transaction volume grows.", green: false, delay: 0.2 },
-  { val: "Stays", sub: "We remain your technical partner after launch — not a vendor who disappears.", green: false, alt: true, delay: 0.3 },
+  { val: "2014", sub: "Digital journey began — a decade of building real systems.", accent: "#4D8B72", delay: 0 },
+  { val: "Hours", sub: "Recovered weekly by clients who replace manual work with MEI systems.", accent: "#1FB5C9", delay: 0.1 },
+  { val: "Scales", sub: "System architectures designed to grow as your transaction volume grows.", accent: "#D4A574", delay: 0.2 },
+  { val: "Stays", sub: "We remain your technical partner after launch — not a vendor who disappears.", accent: "#E8745B", delay: 0.3 },
 ];
 
 export function WhyMei() {
@@ -35,7 +35,7 @@ export function WhyMei() {
               A decade of solving<br/>the right problems.
             </h2>
             <p className="text-lg text-[#B8C2CE] font-light leading-relaxed mb-8">
-              MEI's digital journey started in 2014 through technology ventures. Not a trendy AI startup — an operational technology firm that evolved from building its own products into building intelligent ecosystems for others.
+              MEI&apos;s digital journey started in 2014 through technology ventures. Not a trendy AI startup — an operational technology firm that evolved from building its own products into building intelligent ecosystems for others.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
               {checks.map((item, i) => (
@@ -59,9 +59,10 @@ export function WhyMei() {
               <div className="flex flex-col gap-4 mt-8">
                 {stats.slice(0,2).map((s,i)=>(
                   <motion.div key={i} initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: s.delay }}
-                    whileHover={{ scale: 1.02, borderColor: s.green ? 'rgba(77,139,114,0.4)' : 'rgba(255,255,255,0.12)' }}
-                    className={`p-8 rounded-xl border transition-all duration-300 cursor-default ${s.green ? "bg-brand-emerald/5 border-brand-emerald/15" : "bg-[#12182B] border-white/5"}`}>
-                    <div className={`text-4xl font-display font-medium mb-2 tracking-tight ${s.green ? "text-brand-emerald" : "text-white"}`}>{s.val}</div>
+                    whileHover={{ scale: 1.02 }}
+                    style={{ borderTop: `2px solid ${s.accent}40` }}
+                    className="p-8 rounded-xl border border-white/5 bg-[#12182B] transition-all duration-300 cursor-default">
+                    <div className="text-4xl font-display font-medium mb-2 tracking-tight" style={{ color: s.accent }}>{s.val}</div>
                     <div className="text-sm text-[#98A3B3] font-light leading-relaxed">{s.sub}</div>
                   </motion.div>
                 ))}
@@ -69,9 +70,10 @@ export function WhyMei() {
               <div className="flex flex-col gap-4">
                 {stats.slice(2).map((s,i)=>(
                   <motion.div key={i} initial={{ opacity: 0, x: 16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: s.delay }}
-                    whileHover={{ scale: 1.02, borderColor: 'rgba(255,255,255,0.12)' }}
-                    className={`p-8 rounded-xl border border-white/5 transition-all duration-300 cursor-default ${s.alt ? "bg-[#161D2B]" : "bg-[#12182B]"}`}>
-                    <div className="text-4xl font-display font-medium text-white mb-2 tracking-tight">{s.val}</div>
+                    whileHover={{ scale: 1.02 }}
+                    style={{ borderTop: `2px solid ${s.accent}40` }}
+                    className="p-8 rounded-xl border border-white/5 bg-[#12182B] transition-all duration-300 cursor-default">
+                    <div className="text-4xl font-display font-medium mb-2 tracking-tight" style={{ color: s.accent }}>{s.val}</div>
                     <div className="text-sm text-[#98A3B3] font-light leading-relaxed">{s.sub}</div>
                   </motion.div>
                 ))}

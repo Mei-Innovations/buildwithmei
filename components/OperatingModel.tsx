@@ -4,10 +4,10 @@ import { motion } from 'motion/react';
 import { Network, ShieldCheck, GitMerge, Users2 } from 'lucide-react';
 
 const steps = [
-  { icon: Network, num: "01", title: "Operations Audit", desc: "We map where your business is actually losing time and money — reviewing current tools, handoffs, and workflows before a single line of code is written. Most clients are surprised by what we find." },
-  { icon: GitMerge, num: "02", title: "Custom Build", desc: "No templates. No off-the-shelf platforms bent to fit. We build exactly what your operations need — dashboards, portals, automation layers — designed for how your team works today." },
-  { icon: Users2, num: "03", title: "Automation Integration", desc: "We connect your CRM, communication channels, and data sources into a single reliable workflow engine. Repetitive tasks stop being your team's problem." },
-  { icon: ShieldCheck, num: "04", title: "Launch & Ongoing Support", desc: "We deploy without disrupting your current operations. Post-launch, we stay in the room — monitoring, refining, and scaling as your business grows." },
+  { icon: Network, num: "01", title: "Operations Audit", desc: "We map where your business is actually losing time and money — reviewing current tools, handoffs, and workflows before a single line of code is written. Most clients are surprised by what we find.", accent: "#D4A574" },
+  { icon: GitMerge, num: "02", title: "Custom Build", desc: "No templates. No off-the-shelf platforms bent to fit. We build exactly what your operations need — dashboards, portals, automation layers — designed for how your team works today.", accent: "#1FB5C9" },
+  { icon: Users2, num: "03", title: "Automation Integration", desc: "We connect your CRM, communication channels, and data sources into a single reliable workflow engine. Repetitive tasks stop being your team's problem.", accent: "#4D8B72" },
+  { icon: ShieldCheck, num: "04", title: "Launch & Ongoing Support", desc: "We deploy without disrupting your current operations. Post-launch, we stay in the room — monitoring, refining, and scaling as your business grows.", accent: "#E8745B" },
 ];
 
 export function OperatingModel() {
@@ -17,7 +17,7 @@ export function OperatingModel() {
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-20 max-w-3xl">
           <div className="text-sm font-mono tracking-widest text-[#98A3B3] uppercase mb-4">Our Process</div>
           <h2 className="text-4xl md:text-5xl font-display font-medium text-white mb-5 tracking-tight text-balance">How we work with you.</h2>
-          <p className="text-lg text-[#B8C2CE] font-light leading-relaxed">We don't hand off code and disappear. We act as your operational technology partner — from the first conversation through to long-term system growth.</p>
+          <p className="text-lg text-[#B8C2CE] font-light leading-relaxed">We don&apos;t hand off code and disappear. We act as your operational technology partner — from the first conversation through to long-term system growth.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
@@ -28,11 +28,12 @@ export function OperatingModel() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative p-8 rounded-xl bg-[#12182B] border border-white/5 hover:border-brand-emerald/20 transition-all duration-400"
+              className="group relative p-8 rounded-xl bg-[#12182B] border border-white/5 hover:border-[var(--accent)]/30 transition-all duration-400"
+              style={{ ['--accent' as string]: step.accent }}
             >
-              <div className="absolute top-6 right-6 font-mono text-[#1a2535] text-4xl font-bold select-none">{step.num}</div>
+              <div className="absolute top-6 right-6 font-mono text-4xl font-bold select-none" style={{ color: `${step.accent}1a` }}>{step.num}</div>
               <div className="flex items-start gap-5">
-                <div className="w-10 h-10 rounded-lg bg-[#0B1020] border border-white/8 flex items-center justify-center text-[#98A3B3] group-hover:text-brand-emerald transition-colors duration-300 shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-[#0B1020] border border-white/8 flex items-center justify-center transition-colors duration-300 shrink-0" style={{ color: step.accent }}>
                   <step.icon size={20} strokeWidth={1.5} />
                 </div>
                 <div>

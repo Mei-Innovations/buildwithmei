@@ -17,24 +17,28 @@ const capabilities = [
     title: 'Intelligent Operations',
     desc: 'AI automation, workflow systems, and process optimization that help businesses operate smarter.',
     tags: ['AI models', 'Automation', 'Workflow'],
+    accent: '#1FB5C9',
   },
   {
     icon: LayoutDashboard,
     title: 'Business Infrastructure',
     desc: 'CRM systems, dashboards, internal platforms, and operational foundations.',
     tags: ['CRM', 'Dashboards', 'Cloud'],
+    accent: '#D4A574',
   },
   {
     icon: Globe,
     title: 'Digital Experiences',
     desc: 'Web platforms, ecommerce experiences, and customer-facing systems.',
     tags: ['Web', 'Ecommerce', 'APIs'],
+    accent: '#E8745B',
   },
   {
     icon: TrendingUp,
     title: 'Growth Systems',
     desc: 'Customer journeys, analytics, integrations, and scalable processes.',
     tags: ['Analytics', 'Integrations', 'Journeys'],
+    accent: '#4D8B72',
   },
 ];
 
@@ -56,8 +60,10 @@ export function WhatMeiBuilds() {
           {capabilities.map((c, i) => (
             <motion.div key={c.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.45, delay: i * 0.06 }}
+              style={{ borderTop: `2px solid ${c.accent}40` }}
               className="bg-[#12182B] p-8 hover:bg-[#151C33] transition-colors duration-300 flex flex-col">
-              <div className="w-9 h-9 rounded-lg bg-[#0B1020] border border-white/8 flex items-center justify-center mb-5 text-brand-emerald">
+              <div className="w-9 h-9 rounded-lg bg-[#0B1020] border border-white/8 flex items-center justify-center mb-5"
+                style={{ color: c.accent }}>
                 <c.icon size={18} strokeWidth={1.5} />
               </div>
               <h3 className="text-base font-medium text-white tracking-tight mb-2">{c.title}</h3>

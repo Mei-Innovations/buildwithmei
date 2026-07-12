@@ -11,6 +11,11 @@ export function PageLoader() {
     const hasLoaded = sessionStorage.getItem('mei-loaded');
     if (hasLoaded) return;
 
+    // Deliberately set post-mount (not in a lazy useState initializer): sessionStorage
+    // doesn't exist during the static export's server render, so the initial client
+    // render must match that server output (isLoading=false) to avoid a hydration
+    // mismatch. This effect runs after hydration completes, then flips state safely.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsLoading(true);
     const t = setTimeout(() => {
       setIsLoading(false);
