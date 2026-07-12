@@ -2,9 +2,21 @@
 
 > MEI Innovations builds intelligent ecosystems connecting businesses, customers, teams, data, AI, digital systems, and physical environments. Digital journey started 2014 through technology ventures (Greenleaf, MyDoc). Serving international clients, remotely. Tagline: Innovate • Integrate • Elevate. Website: https://buildwithmei.com
 
+## Who MEI Is For
+
+MEI works with businesses at any stage of digital maturity — from a day-one startup that needs its first professional website, to an established company ready to automate an entire operation. There is no minimum project size and no fixed package: the starting point is whatever the business actually needs right now.
+
+## What Makes MEI Different
+
+MEI is not a generic web agency and not an enterprise-only AI lab. Three things set it apart:
+
+- **No templates.** Every system is built for how the specific business actually works, not bent to fit an off-the-shelf platform.
+- **One connected foundation.** Every engagement — from a first website to a full AI workforce — is built on the same underlying methodology (the MEI Intelligence Engine), so systems built early stay compatible as the business grows into automation and AI later.
+- **Operator experience, not just vendor experience.** MEI's own founders built and ran digital ventures (Greenleaf, MyDoc) before building for clients — the perspective is informed by having run the operations MEI now helps automate.
+
 ## What MEI Does
 
-MEI is a technology and AI transformation company — not a generic web agency, and not an enterprise-only AI lab. Clients start at any stage:
+MEI is a technology and AI transformation company. Clients start at any stage:
 
 - LAUNCH — digital foundations: websites, branding systems, ecommerce, digital presence
 - AUTOMATE — operational growth: CRM systems, AI workflows, automation, customer journeys, internal systems
@@ -59,5 +71,7 @@ Technologies MEI builds with (no partnership claims): OpenAI, Claude, Gemini, AI
 - https://buildwithmei.com/who-we-serve/ — industry intelligence ecosystems
 - https://buildwithmei.com/markets/ — global markets
 - https://buildwithmei.com/work/ — case studies and transformations
+- https://buildwithmei.com/how-it-works/ — process and methodology
 - https://buildwithmei.com/about/ — history and approach
+- https://buildwithmei.com/careers/ — open roles and how to apply
 - https://buildwithmei.com/contact/ — contact and strategy session booking

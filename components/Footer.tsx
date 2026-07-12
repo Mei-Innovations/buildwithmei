@@ -126,14 +126,14 @@ export function Footer() {
               <h4 className="text-white font-medium mb-5 text-sm">Company</h4>
               <ul className="space-y-3 text-sm text-[#B0BAC7] font-light">
                 {[
-                  { label: "About", href: "/about" },
                   { label: "Solutions", href: "/services" },
                   { label: "Industries", href: "/who-we-serve" },
                   { label: "Markets", href: "/markets" },
                   { label: "Work", href: "/work" },
                   { label: "How It Works", href: "/how-it-works" },
-                  { label: "Careers", href: "/careers" },
+                  { label: "About", href: "/about" },
                   { label: "Contact", href: "/contact" },
+                  { label: "Careers", href: "/careers" },
                 ].map(c => (
                   <li key={c.label}><Link href={c.href} className="hover:text-white transition-colors">{c.label}</Link></li>
                 ))}
