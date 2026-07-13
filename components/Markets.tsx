@@ -102,7 +102,8 @@ export function Markets() {
                   onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#12182B] via-[#12182B]/12 to-transparent pointer-events-none" />
                 <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: m.accent }} />
-                <span className={`fi fi-${m.flag} absolute bottom-3 left-6 rounded-[3px] shadow-[0_2px_8px_rgba(0,0,0,0.4)] md:hidden`} style={{ width: '32px', height: '24px' }} aria-hidden />
+                <span className={`fi fi-${m.flag} absolute bottom-4 left-6 rounded-[4px] shadow-[0_2px_10px_rgba(0,0,0,0.5)] md:hidden`}
+                  style={{ width: '44px', height: '33px', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} aria-hidden />
               </div>
               <div className="p-8 pt-5 flex flex-col flex-1">
               <h3 className="text-lg font-medium text-white tracking-tight mb-3">{m.name}</h3>
