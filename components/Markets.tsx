@@ -96,14 +96,16 @@ export function Markets() {
               viewport={{ once: true }} transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
               style={{ ['--accent' as string]: m.accent }}
               className="group rounded-xl bg-[#12182B] border border-white/5 hover:border-[var(--accent)]/30 transition-all duration-400 flex flex-col overflow-hidden">
-              <div className="relative h-36 overflow-hidden">
+              <div className="relative h-36 shrink-0 overflow-hidden">
                 <img src={m.img} alt={m.imgAlt} loading="lazy"
                   className="w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-700"
                   onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#12182B] via-[#12182B]/12 to-transparent pointer-events-none" />
                 <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: m.accent }} />
-                <span className={`fi fi-${m.flag} absolute bottom-4 left-6 rounded-[4px] shadow-[0_2px_10px_rgba(0,0,0,0.5)] md:hidden`}
-                  style={{ width: '44px', height: '33px', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} aria-hidden />
+                <div className="md:hidden">
+                  <span className={`fi fi-${m.flag} bottom-4 left-6 rounded-[4px] shadow-[0_2px_10px_rgba(0,0,0,0.5)]`}
+                    style={{ position: 'absolute', width: '44px', height: '33px', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} aria-hidden />
+                </div>
               </div>
               <div className="p-8 pt-5 flex flex-col flex-1">
               <h3 className="text-lg font-medium text-white tracking-tight mb-3">{m.name}</h3>
