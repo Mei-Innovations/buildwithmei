@@ -137,18 +137,21 @@ export function IntelligenceEngine() {
           </svg>
         </motion.div>
 
-        {/* Mobile fallback — same cube, but sized and labeled with real HTML text
-            instead of a scaled-down SVG (node/caption text becomes illegible below ~640px) */}
+        {/* Mobile — vertical signal cascade. Rather than shrinking the spatial hub-and-spoke
+            diagram (illegible below ~640px), the Engine's cube sits at the head of a single
+            downward line, with a traveling pulse connecting each node in sequence — motion
+            expressed as flow rather than spatial network. Built with Framer Motion rather than
+            SMIL, since animateMotion is unreliable on mobile Safari. */}
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ delay: 0.15 }} className="sm:hidden mb-14 flex flex-col items-center">
-          <div className="relative w-40 h-40 mb-5">
+          <div className="relative w-32 h-32 mb-3">
             <div className="absolute inset-0 rounded-full" style={{ background: 'radial-gradient(circle, rgba(109,184,152,0.28) 0%, transparent 70%)' }} />
             <motion.div
               animate={{ scale: [1, 1.06, 1] }}
               transition={{ duration: 3.4, repeat: Infinity, ease: 'easeInOut' }}
               className="absolute inset-0 flex items-center justify-center"
             >
-              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 h-24 drop-shadow-[0_4px_16px_rgba(4,120,87,0.5)]">
+              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 drop-shadow-[0_4px_16px_rgba(4,120,87,0.5)]">
                 <path d="M50 22 L65 30.66 L50 39.32 L35 30.66 Z" fill="#6DB898" />
                 <path d="M50 4 L86 24.78 L71 33.44 L50 21.32 L29 33.44 L14 24.78 Z" fill="#6DB898" />
                 <path d="M11 29 L47 49.78 L47 91.34 L31 82.1 L31 61 L27 58.7 L27 79.8 L11 70.56 Z" fill="#4D8B72" />
@@ -156,13 +159,31 @@ export function IntelligenceEngine() {
               </svg>
             </motion.div>
           </div>
-          <div className="text-sm font-medium text-[#DCE7E1] tracking-tight mb-6">MEI Intelligence Engine™</div>
-          <div className="flex flex-wrap justify-center gap-2 max-w-sm">
-            {nodes.map((n, i) => (
-              <span key={i} className="text-[11px] text-[#B8C2CE] font-mono px-3 py-1.5 rounded-full bg-[#12182B] border border-white/[0.08]">
-                {n.label}
-              </span>
-            ))}
+          <div className="text-sm font-medium text-[#DCE7E1] tracking-tight mb-9">MEI Intelligence Engine™</div>
+
+          <div className="relative w-full max-w-[280px]">
+            {/* Spine */}
+            <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-brand-emerald/50 via-white/10 to-transparent" />
+
+            {/* Traveling signal pulse */}
+            <motion.div
+              className="absolute left-4 w-2.5 h-2.5 rounded-full -translate-x-1/2 bg-[#6DB898]"
+              style={{ boxShadow: '0 0 10px 3px rgba(109,184,152,0.65)' }}
+              animate={{ top: ['0%', '100%'], opacity: [0, 1, 1, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'linear', times: [0, 0.08, 0.92, 1] }}
+            />
+
+            <div className="flex flex-col gap-7">
+              {nodes.map((n, i) => (
+                <motion.div key={n.label} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.1 }}
+                  className="relative pl-10">
+                  <div className="absolute left-4 top-1.5 w-2 h-2 rounded-full -translate-x-1/2 bg-[#4D8B72] ring-4 ring-[#0A0D1A]" />
+                  <div className="text-sm font-medium text-[#DCE7E1] tracking-tight">{n.label}</div>
+                  <div className="text-[10px] text-[#8A94A5] font-mono tracking-wider mt-0.5">{n.sub}</div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
 
